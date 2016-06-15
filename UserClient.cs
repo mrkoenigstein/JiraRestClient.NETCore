@@ -12,7 +12,7 @@ namespace Micromata.Jira
 
         public User getLoggedInUser()
         {        
-            var restUriBuilder = RestUriBuilder2.buildURI(baseUri, RestConstants.USER);
+            var restUriBuilder = RestUriBuilder2.buildURI(baseUri, RestPathConstants.USER);
             restUriBuilder.Query = "username=" + username;
             var completeURI = restUriBuilder.ToString();
             var stream = client.GetStreamAsync(completeURI).GetAwaiter().GetResult();
