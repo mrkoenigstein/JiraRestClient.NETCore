@@ -1,7 +1,7 @@
 using System;
 using System.Net.Http;
 
-namespace Micromata.Jira
+namespace Micromata.Jira.Core
 {
     public abstract class BaseClient
     {

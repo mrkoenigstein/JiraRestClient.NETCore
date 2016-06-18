@@ -1,9 +1,8 @@
 using System;
-using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using Micromata.Jira.Util;
+using Micromata.Jira.Core;
 
 namespace Micromata.Jira
 {
@@ -18,6 +17,8 @@ namespace Micromata.Jira
         private IssueClient _issueClient;
 
         private UserClient _userClient;
+
+        private SearchClient _searchClient;
 
         public JiraRestClient(Uri uri, string username, string password)
         {
@@ -41,7 +42,7 @@ namespace Micromata.Jira
             }
         }
 
-        
+
         public UserClient UserClient
         {
             get
@@ -51,6 +52,18 @@ namespace Micromata.Jira
                     _userClient = new UserClient(this);
                 }
                 return _userClient;
+            }
+        }
+
+        public SearchClient SearchClient
+        {
+            get
+            {
+                if (_searchClient == null)
+                {
+                    _searchClient = new SearchClient(this);
+                }
+                return _searchClient;
             }
         }
 

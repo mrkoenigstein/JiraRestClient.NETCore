@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Micromata.Jira.Jql
+﻿namespace Micromata.Jira.Jql
 {
     public class EKeyword
     {

@@ -1,13 +1,10 @@
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
 using System;
 using System.Threading.Tasks;
 using Micromata.Jira.Domain;
 using Micromata.Jira.Util;
 using System.Runtime.Serialization.Json;
 
-namespace Micromata.Jira
+namespace Micromata.Jira.Core
 {
     public class IssueClient : BaseClient
     {

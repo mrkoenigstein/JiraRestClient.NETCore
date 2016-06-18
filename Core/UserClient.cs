@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Micromata.Jira.Domain;
 using Micromata.Jira.Util;
 
-namespace Micromata.Jira
+namespace Micromata.Jira.Core
 {
     public class UserClient : BaseClient
     {
