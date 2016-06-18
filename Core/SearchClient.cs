@@ -1,5 +1,3 @@
-using System;
-using System.IO;
 using System.Net.Http;
 using System.Runtime.Serialization.Json;
 using System.Text;
