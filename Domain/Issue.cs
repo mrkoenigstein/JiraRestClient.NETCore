@@ -26,11 +26,11 @@ namespace Micromata.Jira.Domain
         public Creator creator { get; set; }
         public Reporter reporter { get; set; }
         public int? aggregatetimeoriginalestimate { get; set; }
-        public DateTime created { get; set; }
-        public DateTime? updated { get; set; }
+        public string created { get; set; }
+        public string updated { get; set; }
         public string description { get; set; }
         public Priority priority { get; set; }
-        public DateTime? duedate { get; set; }
+        public string duedate { get; set; }
         public List<object> issuelinks { get; set; }
         public Watches watches { get; set; }
         public Worklog worklog { get; set; }
@@ -46,7 +46,7 @@ namespace Micromata.Jira.Domain
         public string environment { get; set; }
         public int? timeestimate { get; set; }
         public Aggregateprogress aggregateprogress { get; set; }
-        public DateTime? lastViewed { get; set; }
+        public string lastViewed { get; set; }
         public List<Component> components { get; set; }
         
         [DataMember(Name="comment")]
@@ -212,9 +212,9 @@ namespace Micromata.Jira.Domain
 
         public User updateAuthor { get; set; }
 
-        public DateTime created { get; set; }
+        public string created { get; set; }
 
-        public DateTime updated { get; set; }
+        public string updated { get; set; }
     }
 
 }

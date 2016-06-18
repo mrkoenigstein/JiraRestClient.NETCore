@@ -1,4 +1,5 @@
 using System.Runtime.Serialization.Json;
+using System.Threading.Tasks;
 using Micromata.Jira.Domain;
 using Micromata.Jira.Util;
 
@@ -10,14 +11,14 @@ namespace Micromata.Jira
         {
         }
 
-        public User getLoggedInUser()
+        public async Task<User> getLoggedInUser()
         {        
-            var restUriBuilder = RestUriBuilder2.buildURI(baseUri, RestPathConstants.USER);
+            var restUriBuilder = UriHelper.buildPath(baseUri, RestPathConstants.USER);
             restUriBuilder.Query = "username=" + username;
             var completeURI = restUriBuilder.ToString();
-            var stream = client.GetStreamAsync(completeURI).GetAwaiter().GetResult();
+            var stream = client.GetStreamAsync(completeURI);
             var serializer = new DataContractJsonSerializer(typeof(User));
-            return serializer.ReadObject(stream) as User;
+            return serializer.ReadObject(await stream) as User;
         }
     }
 }

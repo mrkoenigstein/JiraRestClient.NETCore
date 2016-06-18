@@ -1,2 +1,7 @@
 bin/
 obj/
+hwapp.xproj
+hwapp.xproj.user
+.vs/
+.vscode/
+project.lock.json
