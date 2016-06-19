@@ -19,7 +19,7 @@ namespace Micromata.Jira.Util
             return new Uri(retval, issueKey);
         }
 
-        public static UriBuilder buildPath(Uri baseUri, params string[] paths)
+        public static UriBuilder BuildPath(Uri baseUri, params string[] paths)
         {
             if (baseUri.AbsolutePath.EndsWith("/") == false)
             {

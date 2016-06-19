@@ -19,9 +19,9 @@ namespace Micromata.Jira.Core
         /// </summary>
         /// <param name="key">The key of the Issue</param>
         /// <returns>A async Task containing the Issue</returns>
-        public async Task<Issue> getIssueByKey(string key)
+        public async Task<Issue> GetIssueByKey(string key)
         {
-            var restUriBuilder = UriHelper.buildPath(baseUri, RestPathConstants.ISSUE, key);
+            var restUriBuilder = UriHelper.BuildPath(baseUri, RestPathConstants.ISSUE, key);
             var completeUri = restUriBuilder.ToString();
             var stream = client.GetStreamAsync(completeUri);
             var serializer = new DataContractJsonSerializer(typeof(Issue));

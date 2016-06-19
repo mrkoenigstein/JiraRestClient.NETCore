@@ -11,9 +11,9 @@ namespace Micromata.Jira.Core
         {
         }
 
-        public async Task<User> getLoggedInUser()
+        public async Task<User> GetLoggedInUser()
         {        
-            var restUriBuilder = UriHelper.buildPath(baseUri, RestPathConstants.USER);
+            var restUriBuilder = UriHelper.BuildPath(baseUri, RestPathConstants.USER);
             restUriBuilder.Query = "username=" + username;
             var completeURI = restUriBuilder.ToString();
             var stream = client.GetStreamAsync(completeURI);

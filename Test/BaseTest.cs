@@ -7,5 +7,11 @@ namespace Micromata.Jira.Test
         protected Uri uri = new Uri("http://localhost:2990/jira");
         protected string username = "admin";
         protected string password = "admin";
+
+        protected JiraRestClient restClient;
+
+        public BaseTest(){
+            restClient =  new JiraRestClient(uri, username, password);
+        }
     }
 }

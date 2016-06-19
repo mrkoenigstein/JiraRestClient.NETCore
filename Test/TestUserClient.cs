@@ -9,9 +9,8 @@ namespace Micromata.Jira.Test
         [Fact]
         public void testGetLoggedInUser()
         {
-            var restclient = new JiraRestClient(uri, username, password);
-            var userclient = restclient.UserClient;
-            var task = userclient.getLoggedInUser();
+            var userclient = restClient.UserClient;
+            var task = userclient.GetLoggedInUser();
             var user = task.GetAwaiter().GetResult() as User;
             Assert.NotNull(user);
         }

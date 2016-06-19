@@ -10,7 +10,7 @@ namespace Micromata.Jira.Test
         public void testBuilderPath()
         {
             var uri = new Uri("http://localhost:2990/jira");
-            var userUri = UriHelper.buildPath(uri, RestPathConstants.USER, RestPathConstants.ATTACHMENTS, RestParamConstants.ISSUEKEY);
+            var userUri = UriHelper.BuildPath(uri, RestPathConstants.USER, RestPathConstants.ATTACHMENTS, RestParamConstants.ISSUEKEY);
         }
     }
 }

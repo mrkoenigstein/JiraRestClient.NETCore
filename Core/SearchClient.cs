@@ -15,10 +15,10 @@ namespace Micromata.Jira.Core
 
         }
 
-        public async Task<JqlSearchResult> searchIssues(JqlSearchBean jqlSearchBean)
+        public async Task<JqlSearchResult> SearchIssues(JqlSearchBean jqlSearchBean)
         {
-            var json = JsonHelper.toJson(jqlSearchBean, typeof(JqlSearchBean));
-            var uri = UriHelper.buildPath(baseUri, RestPathConstants.SEARCH);
+            var json = JsonHelper.ToJson(jqlSearchBean, typeof(JqlSearchBean));
+            var uri = UriHelper.BuildPath(baseUri, RestPathConstants.SEARCH);
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await client.PostAsync(uri.ToString(), httpContent);
             var serializer = new DataContractJsonSerializer(typeof(JqlSearchResult));

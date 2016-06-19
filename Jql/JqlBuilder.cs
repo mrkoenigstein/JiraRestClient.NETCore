@@ -12,7 +12,7 @@ namespace Micromata.Jira.Jql
             jql = new StringBuilder();
         }
 
-        public JqlKeyword addCondition(EField field, EOperator eoperator, String operand)
+        public JqlKeyword AddCondition(EField field, EOperator eoperator, String operand)
         {
             JqlKeyword jqlKeyword = new JqlKeyword();
             jqlKeyword.jqlbuilder = this;
@@ -31,7 +31,7 @@ namespace Micromata.Jira.Jql
             return jqlKeyword;
         }
 
-        public void clear()
+        public void Clear()
         {
             jql.Clear();
         }
@@ -40,23 +40,23 @@ namespace Micromata.Jira.Jql
         {
             public JqlBuilder jqlbuilder { get; set; }
 
-            public JqlBuilder and()
+            public JqlBuilder And()
             {
                 jqlbuilder.jql.Append(EKeyword.AND + " ");
                 return jqlbuilder;
             }
 
-            public JqlBuilder or()
+            public JqlBuilder Or()
             {
                 jqlbuilder.jql.Append(EKeyword.OR + " ");
                 return jqlbuilder;
             }
 
-            public String orderBy(SortOrder order, params EField[] fields)
+            public String OrderBy(SortOrder order, params EField[] fields)
             {
                 if (fields == null || order == null || fields.Length == 0)
                 {
-                    return build();
+                    return Build();
                 }
 
                 jqlbuilder.jql.Append(EKeyword.ORDER_BY + " ");
@@ -70,12 +70,12 @@ namespace Micromata.Jira.Jql
 
                 jqlbuilder.jql.Append(" " + order);
 
-                return build();
+                return Build();
             }
-            public String build()
+            public String Build()
             {
                 String request = jqlbuilder.jql.ToString();
-                jqlbuilder.clear();
+                jqlbuilder.Clear();
                 return request;
             }
 

@@ -20,6 +20,8 @@ namespace Micromata.Jira
 
         private SearchClient _searchClient;
 
+        private SystemClient _systemClient;
+
         public JiraRestClient(Uri uri, string username, string password)
         {
             this._client = new HttpClient();
@@ -64,6 +66,18 @@ namespace Micromata.Jira
                     _searchClient = new SearchClient(this);
                 }
                 return _searchClient;
+            }
+        }
+
+        public SystemClient SystemClient
+        {
+            get
+            {
+                if (_systemClient == null)
+                {
+                    _systemClient = new SystemClient(this);
+                }
+                return _systemClient;
             }
         }
 

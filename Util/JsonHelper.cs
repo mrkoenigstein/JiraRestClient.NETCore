@@ -6,7 +6,7 @@ namespace Micromata.Jira.Util
 {
     public class JsonHelper
     {
-        public static string toJson(object obj, Type type)
+        public static string ToJson(object obj, Type type)
         {
             var serializer = new DataContractJsonSerializer(type);
             MemoryStream ms = new MemoryStream();
