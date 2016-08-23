@@ -32,5 +32,19 @@ namespace Micromata.Jira.Core
             var serializer = new DataContractJsonSerializer(typeof(List<Project>));
             return serializer.ReadObject(await stream) as List<Project>;
         }
+
+        public async Task<List<Version>> GetProjectVersions(string key){
+            var restUriBuilder = UriHelper.BuildPath(baseUri, RestPathConstants.PROJECT, key, RestPathConstants.VERSIONS);
+            var stream = client.GetStreamAsync(restUriBuilder.ToString());
+            var serializer = new DataContractJsonSerializer(typeof(List<Version>));
+            return serializer.ReadObject(await stream) as List<Version>;
+        }
+
+        public async Task<List<Component>> GetProjectComponents(string key){
+            var restUriBuilder = UriHelper.BuildPath(baseUri, RestPathConstants.PROJECT, key, RestPathConstants.COMPONENTS);
+            var stream = client.GetStreamAsync(restUriBuilder.ToString());
+            var serializer = new DataContractJsonSerializer(typeof(List<Component>));
+            return serializer.ReadObject(await stream) as List<Component>;
+        }
     }
 }
