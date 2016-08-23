@@ -1,6 +1,6 @@
 {
   "name" : "JiraRestClient.NETCore",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "title": "JiraRestClient for .NetCore",
   "description": "A simple RestClient for Jira-RestAPI, using only .NetCore Modules.",
   "copyright": "cschulc 2016",
