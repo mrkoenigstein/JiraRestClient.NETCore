@@ -16,7 +16,7 @@
 
         public const string MAX_RESULTS = "maxResults";
 
-        public const string PROJECTKEY = "project";
+        public const string PROJECT = "project";
 
         public const string FIELDS = "fields";
     }

@@ -8,6 +8,8 @@ namespace Micromata.Jira.Test
         protected string username = "admin";
         protected string password = "admin";
 
+        protected string project_key = "DEMO";
+
         protected JiraRestClient restClient;
 
         public BaseTest(){

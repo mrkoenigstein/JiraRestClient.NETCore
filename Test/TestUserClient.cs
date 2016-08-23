@@ -14,5 +14,14 @@ namespace Micromata.Jira.Test
             var user = task.GetAwaiter().GetResult() as User;
             Assert.NotNull(user);
         }
+
+        [Fact]
+        public void TestGetUserByUsername()
+        {
+            var userclient = restClient.UserClient;
+            var task = userclient.GetUserByUsername(username);
+            var user = task.GetAwaiter().GetResult() as User;
+            Assert.NotNull(user);
+        }
     }
 }
