@@ -1,12 +1,12 @@
 {
   "name" : "JiraRestClient.NETCore",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "title": "JiraRestClient for .NetCore",
   "description": "A simple RestClient for Jira-RestAPI, using only .NetCore Modules.",
   "copyright": "cschulc 2016",
   "licenseUrl": "http://www.apache.org/licenses/LICENSE-2.0",
   "authors": [
-    "Christian Schulze, c.schulze@micromata.de"
+    "Christian Schulze, cschulc@outlook.com"
   ],
   "language": "en_US",
   "buildOptions": {
