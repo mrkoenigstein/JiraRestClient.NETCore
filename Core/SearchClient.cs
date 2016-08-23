@@ -11,8 +11,6 @@ namespace Micromata.Jira.Core
     {
         public SearchClient(JiraRestClient jiraRestClient) : base(jiraRestClient)
         {
-
-
         }
 
         public async Task<JqlSearchResult> SearchIssues(JqlSearchBean jqlSearchBean)
