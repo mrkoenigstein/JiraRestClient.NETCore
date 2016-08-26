@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net;
 
 namespace Micromata.Jira.Util
 {
@@ -9,6 +10,21 @@ namespace Micromata.Jira.Util
             var ub = new UriBuilder(baseUri);
             string query = ub.Query;
             return ub.Uri;
+        }
+
+        public static UriBuilder AddQuery(UriBuilder uribuilder, string name, string value)
+        {
+            var query = uribuilder.Query;
+            var queryParam = name + "=" + WebUtility.UrlEncode(value);
+            if(String.IsNullOrEmpty(query) == true)
+            {
+                uribuilder.Query = queryParam;
+            }
+            else
+            {
+                uribuilder.Query = query + "&" + queryParam;
+            }
+            return uribuilder;
         }
 
 

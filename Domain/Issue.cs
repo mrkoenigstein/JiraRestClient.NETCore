@@ -9,6 +9,12 @@ namespace Micromata.Jira.Domain
         public string expand { get; set; }
 
         public IssueFields fields { get; set; }
+
+        public RenderedFields renderedFields { get; set; }
+
+        public List<Transition> transitions { get; set; }
+
+        public ChangeLog changelog { get; set; }
     }
 
 
@@ -48,8 +54,8 @@ namespace Micromata.Jira.Domain
         public Aggregateprogress aggregateprogress { get; set; }
         public string lastViewed { get; set; }
         public List<Component> components { get; set; }
-        
-        [DataMember(Name="comment")]
+
+        [DataMember(Name = "comment")]
         public CommentList commentList { get; set; }
         public int? timeoriginalestimate { get; set; }
         public int? aggregatetimespent { get; set; }
@@ -215,6 +221,87 @@ namespace Micromata.Jira.Domain
         public string created { get; set; }
 
         public string updated { get; set; }
+    }
+
+    public class RenderedFields : Base
+    {
+
+        public string aggregatetimeestimate { get; set; }
+
+        public string aggregatetimeoriginalestimate { get; set; }
+
+        public Timetracking timetracking { get; set; }
+
+        public string environment { get; set; }
+
+        public string created { get; set; }
+
+        public string updated { get; set; }
+
+        public string description { get; set; }
+
+        public string timeestimate { get; set; }
+
+        public string duedate { get; set; }
+
+        public string lastViewed { get; set; }
+
+        public List<Attachment> attachment { get; set; }
+
+        public CommentList comment { get; set; }
+
+        public string timeoriginalestimate { get; set; }
+
+        public Object timespent { get; set; }
+
+        public Worklog worklog { get; set; }
+
+        public Object aggregatetimespent { get; set; }
+    }
+
+    public class ChangeLog : Base
+    {
+
+        public int startAt { get; set; }
+
+        public int maxResults { get; set; }
+
+        public int total { get; set; }
+
+        public List<History> histories { get; set; }
+    }
+
+    public class History : Base
+    {
+
+        public User author { get; set; }
+
+        public string created { get; set; }
+
+        public List<Item> items { get; set; }
+    }
+
+    public class Item : Base
+    {
+
+        public string field { get; set; }
+
+        public string fieldtype { get; set; }
+
+        public string from { get; set; }
+
+        public string fromString { get; set; }
+
+        public string to { get; set; }
+
+        public string toString { get; set; }
+    }
+
+    public class Transition
+    {
+        public string id { get; set; }
+        public string name { get; set; }
+        public Status to { get; set; }
     }
 
 }

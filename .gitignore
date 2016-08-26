@@ -5,3 +5,6 @@ hwapp.xproj.user
 .vs/
 .vscode/
 project.lock.json
+JiraRestClient.NETCore.xproj
+JiraRestClient.NETCore.xproj.user
+JiraRestClient.NETCore.sln

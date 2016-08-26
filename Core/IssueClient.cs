@@ -2,6 +2,8 @@ using System.Threading.Tasks;
 using Micromata.Jira.Domain;
 using Micromata.Jira.Util;
 using System.Runtime.Serialization.Json;
+using System.Collections.Generic;
+using System;
 
 namespace Micromata.Jira.Core
 {
@@ -28,5 +30,24 @@ namespace Micromata.Jira.Core
             return serializer.ReadObject(await stream) as Issue;
         }
 
+
+        public async Task<Issue> GetIssueByKey(string key, List<string> fields, List<string> expand)
+        {
+            var restUriBuilder = UriHelper.BuildPath(baseUri, RestPathConstants.ISSUE, key);
+            if(fields != null && fields.Count > 0)
+            {
+                var fieldsParam = string.Join(",", fields);
+                UriHelper.AddQuery(restUriBuilder, RestParamConstants.FIELDS, fieldsParam);
+            }
+            if(expand != null && expand.Count > 0)
+            {
+                var expandParam = string.Join(",", expand);
+                UriHelper.AddQuery(restUriBuilder, RestParamConstants.EXPAND, expandParam);
+            }
+            var completeUri = restUriBuilder.ToString();
+            var stream = client.GetStreamAsync(completeUri);
+            var serializer = new DataContractJsonSerializer(typeof(Issue));
+            return serializer.ReadObject(await stream) as Issue;
+        }
     }
 }
