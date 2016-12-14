@@ -10,7 +10,7 @@ namespace Micromata.Jira.Test
         {           
             var task = restClient.SystemClient.GetIssueTypes();
             var issueTypes = task.GetAwaiter().GetResult();
-            Assert.Equal(6, issueTypes.Count);
+            Assert.Equal(11, issueTypes.Count);
         }
 
         [Fact]

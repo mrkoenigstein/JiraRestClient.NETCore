@@ -8,7 +8,7 @@ namespace Micromata.Jira.Test
         public void TestGetAllProjects(){
             var task = restClient.ProjectClient.GetAllProjects();
             var result = task.GetAwaiter().GetResult();
-            Assert.Equal(3, result.Count);
+            Assert.Equal(5, result.Count);
         }
 
         public void TestProjectByKey(){
