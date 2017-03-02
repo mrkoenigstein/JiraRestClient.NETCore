@@ -3,7 +3,6 @@ using Micromata.Jira.Domain;
 using Micromata.Jira.Util;
 using System.Runtime.Serialization.Json;
 using System.Collections.Generic;
-using System;
 
 namespace Micromata.Jira.Core
 {
