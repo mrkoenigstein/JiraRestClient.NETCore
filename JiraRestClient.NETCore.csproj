@@ -9,7 +9,7 @@
     <Authors>Christian Schulze, cschulc@outlook.com</Authors>
     <TargetFramework>netcoreapp1.0</TargetFramework>
     <AssemblyName>JiraRestClient.NETCore</AssemblyName>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <PackageId>JiraRestClient.NETCore</PackageId>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
     <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
@@ -17,6 +17,10 @@
     <RepositoryUrl>https://github.com/cschulc/JiraRestClient.NETCore</RepositoryUrl>
     <RuntimeFrameworkVersion>1.0.3</RuntimeFrameworkVersion>
     <PackageTargetFallback>$(PackageTargetFallback);dnxcore50;portable-net45+win8</PackageTargetFallback>
+    <Version>1.0.6</Version>
+    <ApplicationIcon />
+    <OutputTypeEx>library</OutputTypeEx>
+    <StartupObject />
   </PropertyGroup>
 
   <ItemGroup>
