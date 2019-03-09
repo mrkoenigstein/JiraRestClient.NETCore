@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Micromata.Jira.Jql
+namespace Cschulc.Jira.Jql
 {
     public class JqlBuilder
     {

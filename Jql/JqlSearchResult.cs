@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using Micromata.Jira.Domain;
+using Cschulc.Jira.Domain;
 
-namespace Micromata.Jira.Jql
+namespace Cschulc.Jira.Jql
 {
     public class JqlSearchResult
     {

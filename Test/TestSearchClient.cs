@@ -1,7 +1,7 @@
 using Micromata.Jira.Jql;
 using Xunit;
 
-namespace Micromata.Jira.Test
+namespace Cschulc.Jira.Test
 {
     public class TestSearchClient : BaseTest
     {

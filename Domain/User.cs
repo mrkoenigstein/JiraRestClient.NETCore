@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Micromata.Jira.Domain
+namespace Cschulc.Jira.Domain
 {
     public class User : Key
     {

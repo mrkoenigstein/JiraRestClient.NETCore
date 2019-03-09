@@ -2,7 +2,7 @@ using Micromata.Jira.Jql;
 using System.Collections.Generic;
 using Xunit;
 
-namespace Micromata.Jira.Test
+namespace Cschulc.Jira.Test
 {
     public class TestIssueClient :BaseTest
     {

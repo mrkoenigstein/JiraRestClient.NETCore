@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Micromata.Jira.Jql
+namespace Cschulc.Jira.Jql
 {
     public class EOperator
     {

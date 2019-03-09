@@ -1,9 +1,9 @@
 using System.Runtime.Serialization.Json;
 using System.Threading.Tasks;
-using Micromata.Jira.Domain;
-using Micromata.Jira.Util;
+using Cschulc.Jira.Domain;
+using Cschulc.Jira.Util;
 
-namespace Micromata.Jira.Core
+namespace Cschulc.Jira.Core
 {
     public class UserClient : BaseClient
     {

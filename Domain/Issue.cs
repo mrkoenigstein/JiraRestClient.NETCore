@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace Micromata.Jira.Domain
+namespace Cschulc.Jira.Domain
 {
     public class Issue : Key
     {

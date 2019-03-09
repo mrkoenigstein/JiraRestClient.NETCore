@@ -2,10 +2,10 @@ using System.Net.Http;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
-using Micromata.Jira.Jql;
-using Micromata.Jira.Util;
+using Cschulc.Jira.Jql;
+using Cschulc.Jira.Util;
 
-namespace Micromata.Jira.Core
+namespace Cschulc.Jira.Core
 {
     public class SearchClient : BaseClient
     {

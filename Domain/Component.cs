@@ -1,4 +1,4 @@
-﻿namespace Micromata.Jira.Domain
+﻿namespace Cschulc.Jira.Domain
 {
     public class Component :Base
     {

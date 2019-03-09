@@ -1,4 +1,4 @@
-﻿namespace Micromata.Jira.Util
+﻿namespace Cschulc.Jira.Util
 {
     public class RestParamConstants
     {

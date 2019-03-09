@@ -1,4 +1,4 @@
-﻿namespace Micromata.Jira.Jql
+﻿namespace Cschulc.Jira.Jql
 {
     class JqlConstants
     {

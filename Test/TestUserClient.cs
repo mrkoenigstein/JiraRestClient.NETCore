@@ -1,7 +1,7 @@
 using Micromata.Jira.Domain;
 using Xunit;
 
-namespace Micromata.Jira.Test
+namespace Cschulc.Jira.Test
 {
     public class TestUserClient : BaseTest
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Micromata.Jira.Test
+namespace Cschulc.Jira.Test
 {
     public abstract class BaseTest
     {

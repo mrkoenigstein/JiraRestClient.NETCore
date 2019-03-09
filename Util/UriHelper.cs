@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net;
 
-namespace Micromata.Jira.Util
+namespace Cschulc.Jira.Util
 {
     public static class UriHelper
     {

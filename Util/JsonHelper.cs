@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Runtime.Serialization.Json;
 
-namespace Micromata.Jira.Util
+namespace Cschulc.Jira.Util
 {
     public class JsonHelper
     {

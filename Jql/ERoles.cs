@@ -1,6 +1,6 @@
 ﻿using Micromata.Jira.Util;
 
-namespace Micromata.Jira.Jql
+namespace Cschulc.Jira.Jql
 {
     public class ERoles
     {

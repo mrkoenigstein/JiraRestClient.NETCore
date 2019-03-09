@@ -4,7 +4,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using Micromata.Jira.Core;
 
-namespace Micromata.Jira
+namespace Cschulc.Jira
 {
     public class JiraRestClient
     {
