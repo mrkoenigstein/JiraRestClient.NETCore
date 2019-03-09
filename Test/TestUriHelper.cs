@@ -1,5 +1,5 @@
 using System;
-using Micromata.Jira.Util;
+using Cschulc.Jira.Util;
 using Xunit;
 
 namespace Cschulc.Jira.Test

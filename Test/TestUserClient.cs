@@ -1,4 +1,4 @@
-using Micromata.Jira.Domain;
+using Cschulc.Jira.Domain;
 using Xunit;
 
 namespace Cschulc.Jira.Test

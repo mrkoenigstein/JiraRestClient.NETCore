@@ -2,7 +2,7 @@ using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using Micromata.Jira.Core;
+using Cschulc.Jira.Core;
 
 namespace Cschulc.Jira
 {

@@ -1,4 +1,4 @@
-using Micromata.Jira.Jql;
+using Cschulc.Jira.Jql;
 using System.Collections.Generic;
 using Xunit;
 

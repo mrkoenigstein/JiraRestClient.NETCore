@@ -1,4 +1,4 @@
-﻿using Micromata.Jira.Util;
+﻿using Cschulc.Jira.Util;
 
 namespace Cschulc.Jira.Jql
 {
