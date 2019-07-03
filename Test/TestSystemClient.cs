@@ -1,23 +1,23 @@
-using Xunit;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Cschulc.Jira.Test
 {
     public class TestSystemClient : BaseTest
     {
 
-        [Fact]
+        [TestMethod]
         public void TestGetIssueTypes()
         {           
             var task = restClient.SystemClient.GetIssueTypes();
             var issueTypes = task.GetAwaiter().GetResult();
-            Assert.Equal(11, issueTypes.Count);
+            Assert.AreEqual(11, issueTypes.Count);
         }
 
-        [Fact]
+        [TestMethod]
         public void TestGetPriorities(){
             var task = restClient.SystemClient.GetPriorities();
             var priorities = task.GetAwaiter().GetResult();
-            Assert.Equal(5, priorities.Count);
+            Assert.AreEqual(5, priorities.Count);
         }
     }
 }

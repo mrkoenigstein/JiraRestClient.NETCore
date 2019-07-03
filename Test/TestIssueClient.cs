@@ -1,19 +1,21 @@
 using Cschulc.Jira.Jql;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using Xunit;
+
 
 namespace Cschulc.Jira.Test
 {
+    [TestClass]
     public class TestIssueClient :BaseTest
     {
-        [Fact]
+        [TestMethod]
         public void testGetIssueByKey(){
             var task = restClient.IssueClient.GetIssueByKey(issuekey_to_search);
             var issue = task.GetAwaiter().GetResult();
-            Assert.NotNull(issue);
+            Assert.IsNotNull(issue);
         }
 
-        [Fact]
+        [TestMethod]
         public void TestGetIssueByKeyWithFields()
         {
             List<string> fields = new List<string>();
@@ -25,10 +27,10 @@ namespace Cschulc.Jira.Test
             expands.Add(EField.CHANGELOG.field);
             var task = restClient.IssueClient.GetIssueByKey(issuekey_to_search, fields, expands);
             var issue = task.GetAwaiter().GetResult();
-            Assert.NotNull(issue);
-            Assert.NotNull(issue.fields.summary);
-            Assert.NotNull(issue.fields.description);
-            Assert.NotNull(issue.renderedFields.description);
+            Assert.IsNotNull(issue);
+            Assert.IsNotNull(issue.fields.summary);
+            Assert.IsNotNull(issue.fields.description);
+            Assert.IsNotNull(issue.renderedFields.description);
            
         }
     }

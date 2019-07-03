@@ -1,11 +1,12 @@
 using Cschulc.Jira.Jql;
-using Xunit;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Cschulc.Jira.Test
 {
+    [TestClass]
     public class TestSearchClient : BaseTest
     {
-        [Fact]
+        [TestMethod]
         public void testSearchIssues()
         {
             var jsb = new JqlSearchBean();
@@ -17,9 +18,9 @@ namespace Cschulc.Jira.Test
             jsb.AddField(EField.ISSUE_KEY, EField.STATUS, EField.DUE, EField.SUMMARY, EField.ISSUE_TYPE, EField.PRIORITY, EField.UPDATED, EField.TRANSITIONS);
             jsb.AddExpand(EField.TRANSITIONS);
             var task = restClient.SearchClient.SearchIssues(jsb);
-            var result = task.GetAwaiter().GetResult() as JqlSearchResult;
-            Assert.NotNull(result);
-            Assert.Equal(7, result.total);
+            var result = task.GetAwaiter().GetResult();
+            Assert.IsNotNull(result);
+            Assert.AreEqual(7, result.total);
         }
     }
 

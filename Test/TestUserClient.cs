@@ -1,27 +1,27 @@
-using Cschulc.Jira.Domain;
-using Xunit;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Cschulc.Jira.Test
 {
+    [TestClass]
     public class TestUserClient : BaseTest
     {
 
-        [Fact]
+        [TestMethod]
         public void testGetLoggedInUser()
         {
             var userclient = restClient.UserClient;
             var task = userclient.GetLoggedInUser();
-            var user = task.GetAwaiter().GetResult() as User;
-            Assert.NotNull(user);
+            var user = task.GetAwaiter().GetResult();
+            Assert.IsNotNull(user);
         }
 
-        [Fact]
+        [TestMethod]
         public void TestGetUserByUsername()
         {
             var userclient = restClient.UserClient;
             var task = userclient.GetUserByUsername(username);
-            var user = task.GetAwaiter().GetResult() as User;
-            Assert.NotNull(user);
+            var user = task.GetAwaiter().GetResult();
+            Assert.IsNotNull(user);
         }
     }
 }
