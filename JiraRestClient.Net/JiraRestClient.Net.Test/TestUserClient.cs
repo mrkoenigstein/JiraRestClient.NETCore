@@ -1,3 +1,4 @@
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace JiraRestClient.Net.Test
@@ -10,18 +11,16 @@ namespace JiraRestClient.Net.Test
         public void TestGetLoggedInUser()
         {
             var userClient = RestClient.UserClient;
-            var task = userClient.GetLoggedInUser();
-            var user = task.GetAwaiter().GetResult();
-            Assert.IsNotNull(user);
+            var user = userClient.GetLoggedInUser();
+            user.Should().NotBeNull();
         }
 
         [TestMethod]
         public void TestGetUserByUsername()
         {
             var userClient = RestClient.UserClient;
-            var task = userClient.GetUserByUsername(Username);
-            var user = task.GetAwaiter().GetResult();
-            Assert.IsNotNull(user);
+            var user = userClient.GetUserByUsername(Username);
+            user.Should().NotBeNull();
         }
     }
 }

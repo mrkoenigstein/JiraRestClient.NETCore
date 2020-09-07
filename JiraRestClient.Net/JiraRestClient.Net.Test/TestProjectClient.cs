@@ -1,3 +1,4 @@
+using FluentAssertions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace JiraRestClient.Net.Test
@@ -8,15 +9,14 @@ namespace JiraRestClient.Net.Test
         [TestMethod]
         public void TestGetAllProjects(){
             var task = RestClient.ProjectClient.GetAllProjects();
-            var result = task.GetAwaiter().GetResult();
-            Assert.AreEqual(5, result.Count);
+            task.Should().NotBeNullOrEmpty();
         }
 
         [TestMethod]
         public void TestProjectByKey(){
-            var task = RestClient.ProjectClient.GetProjectByKey(ProjectKey);
-            var result = task.GetAwaiter().GetResult();
-            Assert.AreEqual(ProjectKey, result.Key);
+            var project = RestClient.ProjectClient.GetProjectByKey(ProjectKey);
+            project.Should().NotBeNull();
+            project.Key.Should().Be(ProjectKey);
         }
     }
 }

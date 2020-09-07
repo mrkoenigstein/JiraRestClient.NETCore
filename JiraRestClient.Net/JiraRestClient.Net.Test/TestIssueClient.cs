@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using FluentAssertions;
 using JiraRestClient.Net.Jql;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -9,9 +10,8 @@ namespace JiraRestClient.Net.Test
     {
         [TestMethod]
         public void TestGetIssueByKey(){
-            var task = RestClient.issueClient.GetIssueByKey(IssuekeyToSearch);
-            var issue = task.GetAwaiter().GetResult();
-            Assert.IsNotNull(issue);
+            var issue = RestClient.IssueClient.GetIssueByKey(IssuekeyToSearch);
+            issue.Should().NotBeNull();
         }
 
         [TestMethod]
@@ -22,13 +22,11 @@ namespace JiraRestClient.Net.Test
             {
                 EField.Renderedfields.Field, EField.Transitions.Field, EField.Changelog.Field
             };
-            var task = RestClient.issueClient.GetIssueByKey(IssuekeyToSearch, fields, expands);
-            var issue = task.GetAwaiter().GetResult();
-            Assert.IsNotNull(issue);
-            Assert.IsNotNull(issue.Fields.Summary);
-            Assert.IsNotNull(issue.Fields.Description);
-            Assert.IsNotNull(issue.RenderedFields.Description);
-           
+            var issue = RestClient.IssueClient.GetIssueByKey(IssuekeyToSearch, fields, expands);
+            issue.Should().NotBeNull();
+            issue.Fields.Summary.Should().NotBeNull();
+            issue.Fields.Description.Should().NotBeNull();
+            issue.RenderedFields.Description.Should().NotBeNull();
         }
     }
 }

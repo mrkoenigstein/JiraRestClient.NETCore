@@ -8,12 +8,13 @@ namespace JiraRestClient.Net
 {
     public class JiraRestClient
     {
-        private readonly string _username;
+        public HttpClient Client { get; }
 
-        private readonly HttpClient _client;
+        public Uri BaseUri { get; }
 
-        private readonly Uri _baseUri;
-
+        public string Username { get; }
+        
+        
         private IssueClient _issueClient;
 
         private UserClient _userClient;
@@ -26,98 +27,26 @@ namespace JiraRestClient.Net
 
         public JiraRestClient(Uri uri, string username, string password)
         {
-            _client = new HttpClient();
-            _baseUri = uri;
-            _username = username;
+            Client = new HttpClient();
+            BaseUri = uri;
+            Username = username;
             var bytes = Encoding.ASCII.GetBytes(username + ":" + password);
             var token = Convert.ToBase64String(bytes);
-            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", token);
+            Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", token);
         }
 
-        public IssueClient issueClient
-        {
-            get
-            {
-                if (_issueClient == null)
-                {
-                    _issueClient = new IssueClient(this);
-                }
-                return _issueClient;
-            }
-        }
+        public IssueClient IssueClient => _issueClient ?? (_issueClient = new IssueClient(this));
 
 
-        public UserClient UserClient
-        {
-            get
-            {
-                if (_userClient == null)
-                {
-                    _userClient = new UserClient(this);
-                }
-                return _userClient;
-            }
-        }
+        public UserClient UserClient => _userClient ?? (_userClient = new UserClient(this));
 
-        public SearchClient SearchClient
-        {
-            get
-            {
-                if (_searchClient == null)
-                {
-                    _searchClient = new SearchClient(this);
-                }
-                return _searchClient;
-            }
-        }
+        public SearchClient SearchClient => _searchClient ?? (_searchClient = new SearchClient(this));
 
-        public SystemClient SystemClient
-        {
-            get
-            {
-                if (_systemClient == null)
-                {
-                    _systemClient = new SystemClient(this);
-                }
-                return _systemClient;
-            }
-        }
+        public SystemClient SystemClient => _systemClient ?? (_systemClient = new SystemClient(this));
 
-        public ProjectClient ProjectClient
-        {
-            get
-            {
-                if (_projectClient == null)
-                {
-                    _projectClient = new ProjectClient(this);
-                }
-                return _projectClient;
-            }
-        }
+        public ProjectClient ProjectClient => _projectClient ?? (_projectClient = new ProjectClient(this));
 
-        public HttpClient Client
-        {
-            get
-            {
-                return _client;
-            }
-        }
 
-        public Uri BaseUri
-        {
-            get
-            {
-                return _baseUri;
-            }
-        }
-
-        public string Username
-        {
-            get
-            {
-                return _username;
-            }
-        }
     }
 
 }

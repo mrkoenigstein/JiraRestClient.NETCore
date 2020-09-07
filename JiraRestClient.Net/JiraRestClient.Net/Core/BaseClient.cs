@@ -16,7 +16,7 @@ namespace JiraRestClient.Net.Core
 
         protected readonly string Username;
 
-        public BaseClient(JiraRestClient jiraRestClient)
+        protected BaseClient(JiraRestClient jiraRestClient)
         {
             _jiraRestClient = jiraRestClient;
             Client = jiraRestClient.Client;

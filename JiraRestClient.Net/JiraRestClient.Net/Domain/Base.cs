@@ -1,14 +1,22 @@
-﻿namespace JiraRestClient.Net.Domain
+﻿using System.Text.Json.Serialization;
+
+namespace JiraRestClient.Net.Domain
 {
     public class Base
     {
-        public long Id { get; set; }
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
+        
+        [JsonPropertyName("self")]
         public string Self { get; set; }
+        
+        [JsonPropertyName("name")]
         public string Name { get; set; }
     }
 
     public class KeyBase : Base
     {
+        [JsonPropertyName("key")]
         public string Key { get; set; }
     }
 }

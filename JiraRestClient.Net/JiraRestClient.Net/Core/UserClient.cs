@@ -1,4 +1,5 @@
 using System.Runtime.Serialization.Json;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Cschulc.Jira.Util;
 using JiraRestClient.Net.Domain;
@@ -11,23 +12,22 @@ namespace JiraRestClient.Net.Core
         {
         }
 
-        public async Task<User> GetLoggedInUser()
+        public User GetLoggedInUser()
         {        
             var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.USER);
             restUriBuilder.Query = "username=" + Username;
             var completeUri = restUriBuilder.ToString();
-            var stream = Client.GetStreamAsync(completeUri);
-            var serializer = new DataContractJsonSerializer(typeof(User));
-            return serializer.ReadObject(await stream) as User;
+            var stream = Client.GetStringAsync(completeUri);
+            var streamResult = stream.Result;
+            return  JsonSerializer.Deserialize<User>(streamResult);
         }
 
-        public async Task<User> GetUserByUsername(string username){
+        public User GetUserByUsername(string username){
              var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.USER);
             restUriBuilder.Query = "username=" + username;
             var completeUri = restUriBuilder.ToString();
-            var stream = Client.GetStreamAsync(completeUri);
-            var serializer = new DataContractJsonSerializer(typeof(User));
-            return serializer.ReadObject(await stream) as User;
+            var stream = Client.GetStringAsync(completeUri);
+            return  JsonSerializer.Deserialize<User>(stream.Result);
         }
     }
 }

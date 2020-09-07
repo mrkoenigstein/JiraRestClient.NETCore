@@ -1,6 +1,5 @@
 using System.Collections.Generic;
-using System.Runtime.Serialization.Json;
-using System.Threading.Tasks;
+using System.Text.Json;
 using Cschulc.Jira.Util;
 using JiraRestClient.Net.Domain;
 
@@ -12,27 +11,23 @@ namespace JiraRestClient.Net.Core
         {
         }
 
-        public async Task<List<IssueType>> GetIssueTypes()
+        public List<IssueType> GetIssueTypes()
         {
             var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.ISSUETPYES);
-            var stream = Client.GetStreamAsync(restUriBuilder.ToString());
-            var serializer = new DataContractJsonSerializer(typeof(List<IssueType>));
-            return serializer.ReadObject(await stream) as List<IssueType>;
+            var stream = Client.GetStringAsync(restUriBuilder.ToString());
+            return JsonSerializer.Deserialize<List<IssueType>>(stream.Result);
         }
 
-        public async Task<List<Priority>> GetPriorities(){
+        public List<Priority> GetPriorities(){
             var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.PRIORITY);
-            var stream = Client.GetStreamAsync(restUriBuilder.ToString());
-            var serializer = new DataContractJsonSerializer(typeof(List<Priority>));
-            return serializer.ReadObject(await stream) as List<Priority>;
+            var stream = Client.GetStringAsync(restUriBuilder.ToString());
+            return JsonSerializer.Deserialize<List<Priority>>(stream.Result);
         }
 
-        public async Task<List<Status>> GetStates(){
+        public List<Status> GetStates(){
             var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.STATUS);
-            var stream = Client.GetStreamAsync(restUriBuilder.ToString());
-            var serializer = new DataContractJsonSerializer(typeof(List<Status>));
-            return serializer.ReadObject(await stream) as List<Status>;
+            var stream = Client.GetStringAsync(restUriBuilder.ToString());
+            return JsonSerializer.Deserialize<List<Status>>(stream.Result);
         }
-
     }
 }

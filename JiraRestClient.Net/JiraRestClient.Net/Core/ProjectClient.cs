@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization.Json;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Cschulc.Jira.Util;
 using JiraRestClient.Net.Domain;
@@ -15,36 +16,32 @@ namespace JiraRestClient.Net.Core
         {
         }
 
-        public async Task<Project> GetProjectByKey(string key)
+        public Project GetProjectByKey(string key)
         {
             var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.PROJECT);
             restUriBuilder.Query = RestParamConstants.PROJECT + "=" + key;
             var completeUri = restUriBuilder.ToString();
-            var stream = Client.GetStreamAsync(completeUri);
-            var serializer = new DataContractJsonSerializer(typeof(Project));
-            return serializer.ReadObject(await stream) as Project;
+            var stream = Client.GetStringAsync(completeUri);
+            return JsonSerializer.Deserialize<Project>(stream.Result);
         }
 
-        public async Task<List<Project>> GetAllProjects()
+        public List<Project> GetAllProjects()
         {
             var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.PROJECT);
-            var stream = Client.GetStreamAsync(restUriBuilder.ToString());
-            var serializer = new DataContractJsonSerializer(typeof(List<Project>));
-            return serializer.ReadObject(await stream) as List<Project>;
+            var stream = Client.GetStringAsync(restUriBuilder.ToString());
+            return JsonSerializer.Deserialize<List<Project>>(stream.Result);
         }
 
-        public async Task<List<Version>> GetProjectVersions(string key){
+        public List<Version> GetProjectVersions(string key){
             var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.PROJECT, key, RestPathConstants.VERSIONS);
-            var stream = Client.GetStreamAsync(restUriBuilder.ToString());
-            var serializer = new DataContractJsonSerializer(typeof(List<Version>));
-            return serializer.ReadObject(await stream) as List<Version>;
+            var stream = Client.GetStringAsync(restUriBuilder.ToString());
+            return JsonSerializer.Deserialize<List<Version>>(stream.Result);
         }
 
-        public async Task<List<Component>> GetProjectComponents(string key){
+        public List<Component> GetProjectComponents(string key){
             var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.PROJECT, key, RestPathConstants.COMPONENTS);
-            var stream = Client.GetStreamAsync(restUriBuilder.ToString());
-            var serializer = new DataContractJsonSerializer(typeof(List<Component>));
-            return serializer.ReadObject(await stream) as List<Component>;
+            var stream = Client.GetStringAsync(restUriBuilder.ToString());
+            return JsonSerializer.Deserialize<List<Component>>(stream.Result);
         }
     }
 }

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
-using System.Runtime.Serialization.Json;
-using System.Threading.Tasks;
+using System.Text.Json;
 using Cschulc.Jira.Util;
 using JiraRestClient.Net.Domain;
 
@@ -20,17 +19,17 @@ namespace JiraRestClient.Net.Core
         /// </summary>
         /// <param name="key">The key of the Issue</param>
         /// <returns>A async Task containing the Issue</returns>
-        public async Task<Issue> GetIssueByKey(string key)
+        public Issue GetIssueByKey(string key)
         {
             var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.ISSUE, key);
             var completeUri = restUriBuilder.ToString();
-            var stream = Client.GetStreamAsync(completeUri);
-            var serializer = new DataContractJsonSerializer(typeof(Issue));
-            return serializer.ReadObject(await stream) as Issue;
+            var stream = Client.GetStringAsync(completeUri);
+            var streamResult = stream.Result;
+            return JsonSerializer.Deserialize<Issue>(streamResult);
         }
 
 
-        public async Task<Issue> GetIssueByKey(string key, List<string> fields, List<string> expand)
+        public Issue GetIssueByKey(string key, List<string> fields, List<string> expand)
         {
             var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.ISSUE, key);
             if(fields != null && fields.Count > 0)
@@ -44,9 +43,9 @@ namespace JiraRestClient.Net.Core
                 UriHelper.AddQuery(restUriBuilder, RestParamConstants.EXPAND, expandParam);
             }
             var completeUri = restUriBuilder.ToString();
-            var stream = Client.GetStreamAsync(completeUri);
-            var serializer = new DataContractJsonSerializer(typeof(Issue));
-            return serializer.ReadObject(await stream) as Issue;
+            var stream = Client.GetStringAsync(completeUri);
+            var streamResult = stream.Result;
+            return JsonSerializer.Deserialize<Issue>(streamResult);
         }
     }
 }
