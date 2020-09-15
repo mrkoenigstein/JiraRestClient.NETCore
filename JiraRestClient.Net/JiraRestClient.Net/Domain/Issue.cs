@@ -72,7 +72,7 @@ namespace JiraRestClient.Net.Domain
         [JsonPropertyName("labels")]
         public List<string> Labels { get; set; }
         [JsonPropertyName("workratio")]
-        public int? Workratio { get; set; }
+        public long? Workratio { get; set; }
         [JsonPropertyName("assignee")]
         public User Assignee { get; set; }
         [JsonPropertyName("attachment")]
