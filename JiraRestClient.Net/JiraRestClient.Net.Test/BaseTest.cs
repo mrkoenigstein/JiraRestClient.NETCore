@@ -4,7 +4,7 @@ namespace JiraRestClient.Net.Test
 {
     public abstract class BaseTest
     {
-        protected readonly Uri Uri = new Uri("https://localhost:2990/");
+        protected readonly Uri Uri = new Uri("http://localhost:2990/jira");
 
         protected const string Username = "admin";
 

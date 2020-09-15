@@ -1,4 +1,5 @@
 using System;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -27,6 +28,8 @@ namespace JiraRestClient.Net
 
         public JiraRestClient(Uri uri, string username, string password)
         {
+            ServicePointManager.ServerCertificateValidationCallback +=
+                (sender, cert, chain, sslPolicyErrors) => true;
             Client = new HttpClient();
             BaseUri = uri;
             Username = username;

@@ -12,7 +12,7 @@ namespace JiraRestClient.Net.Test
         {
             var jsb = new JqlSearchBean();
             var builder = new JqlBuilder();
-            var jql = builder.AddCondition(EField.Project, EOperator.EQUALS, "WEBUI")
+            var jql = builder.AddCondition(EField.Project, EOperator.EQUALS, "DEMO")
                     .And().AddCondition(EField.Status, EOperator.EQUALS, JqlConstants.StatusInProgress)
                     .OrderBy(SortOrder.Asc, EField.Created);
             jsb.Jql = jql;
