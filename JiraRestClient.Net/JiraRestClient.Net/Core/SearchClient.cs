@@ -14,10 +14,11 @@ namespace JiraRestClient.Net.Core
 
         public JqlSearchResult SearchIssues(JqlSearchBean jqlSearchBean)
         {
-            var json = JsonHelper.ToJson(jqlSearchBean, typeof(JqlSearchBean));
             var uri = UriHelper.BuildPath(BaseUri, RestPathConstants.SEARCH);
-            var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
-            var response = Client.PostAsync(uri.ToString(), httpContent);
+            uri = UriHelper.AddQuery(uri, "jql",jqlSearchBean.Jql);
+            uri = UriHelper.AddQuery(uri,"startAt", jqlSearchBean.StartAt.ToString());
+            uri = UriHelper.AddQuery(uri,"maxResults", jqlSearchBean.MaxResults.ToString());
+            var response = Client.GetAsync(uri.ToString());
             var readAsStringAsync = response.Result.Content.ReadAsStringAsync();
             var result = readAsStringAsync.Result;
             return JsonSerializer.Deserialize<JqlSearchResult>(result);
