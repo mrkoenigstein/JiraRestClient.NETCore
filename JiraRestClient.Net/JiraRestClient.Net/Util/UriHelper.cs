@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net;
+using JiraRestClient.Net.Util;
 
 namespace Cschulc.Jira.Util
 {
@@ -41,7 +42,7 @@ namespace Cschulc.Jira.Util
             {
                 baseUri = new Uri(baseUri.AbsoluteUri + "/");
             }
-            UriBuilder uribuilder = new UriBuilder(baseUri + RestPathConstants.BASE_REST_PATH);
+            UriBuilder uribuilder = new UriBuilder(baseUri + RestPathConstants.BaseRestPath);
             var path = uribuilder.Path;
             foreach (var item in paths)
             {

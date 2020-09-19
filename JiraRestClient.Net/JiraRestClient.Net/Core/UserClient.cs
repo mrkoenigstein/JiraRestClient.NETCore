@@ -3,6 +3,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using Cschulc.Jira.Util;
 using JiraRestClient.Net.Domain;
+using JiraRestClient.Net.Util;
 
 namespace JiraRestClient.Net.Core
 {
@@ -14,7 +15,7 @@ namespace JiraRestClient.Net.Core
 
         public User GetLoggedInUser()
         {        
-            var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.USER);
+            var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.User);
             restUriBuilder.Query = "username=" + Username;
             var completeUri = restUriBuilder.ToString();
             var stream = Client.GetStringAsync(completeUri);
@@ -23,7 +24,7 @@ namespace JiraRestClient.Net.Core
         }
 
         public User GetUserByUsername(string username){
-             var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.USER);
+             var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.User);
             restUriBuilder.Query = "username=" + username;
             var completeUri = restUriBuilder.ToString();
             var stream = Client.GetStringAsync(completeUri);

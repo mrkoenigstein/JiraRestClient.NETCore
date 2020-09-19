@@ -26,6 +26,8 @@ namespace JiraRestClient.Net
 
         private ProjectClient _projectClient;
 
+        private PermissionsClient _permissionsClient;
+
         public JiraRestClient(Uri uri, string username, string password)
         {
             ServicePointManager.ServerCertificateValidationCallback +=
@@ -48,6 +50,9 @@ namespace JiraRestClient.Net
         public SystemClient SystemClient => _systemClient ?? (_systemClient = new SystemClient(this));
 
         public ProjectClient ProjectClient => _projectClient ?? (_projectClient = new ProjectClient(this));
+
+        public PermissionsClient PermissionsClient =>
+            _permissionsClient ?? (_permissionsClient = new PermissionsClient(this));
 
 
     }

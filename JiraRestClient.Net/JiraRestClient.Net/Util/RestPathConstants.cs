@@ -1,40 +1,42 @@
-﻿using JiraRestClient.Net.Util;
-
-namespace Cschulc.Jira.Util
+﻿namespace JiraRestClient.Net.Util
 {
     public class RestPathConstants : JsonConstants
     {
+     
+
         // REST Paths
-        public const string BASE_REST_PATH = "rest/api/2";
+        public const string BaseRestPath = "rest/api/2";
 
-        public const string PROJECT = "project";
+        public const string Project = "project";
 
-        public const string USER = "user";
+        public const string User = "user";
 
-        public const string SEARCH = "search";
+        public const string Search = "search";
 
-        public const string ISSUE = "issue";
+        public const string Issue = "issue";
 
-        public const string COMMENT = "comment";
+        public const string Comment = "comment";
 
-        public const string VERSIONS = "versions";
+        public const string Versions = "versions";
 
-        public const string COMPONENTS = "components";
+        public const string Components = "components";
 
-        public const string ISSUETPYES = "issuetype";
+        public const string IssueTypes = "issuetype";
 
-        public const string STATUS = "status";
+        public const string Status = "status";
 
-        public const string PRIORITY = "priority";
+        public const string Priority = "priority";
 
-        public const string TRANSITIONS = "transitions";
+        public const string Transitions = "transitions";
 
-        public const string WORKLOG = "worklog";
+        public const string Worklog = "worklog";
 
-        public const string ATTACHMENTS = "attachments";
+        public const string Attachments = "attachments";
 
-        public const string ASSIGNABLE = "assignable";
+        public const string Assignable = "assignable";
 
-        public const string SERVER_INFO = "serverInfo";
+        public const string ServerInfo = "serverInfo";
+
+        public const string MyPermissions = "mypermissions";
     }
 }

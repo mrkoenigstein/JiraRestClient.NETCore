@@ -1,5 +1,6 @@
 using System;
 using System.Net.Http;
+using System.Text.Json;
 
 namespace JiraRestClient.Net.Core
 {
@@ -15,7 +16,7 @@ namespace JiraRestClient.Net.Core
         protected readonly HttpClient Client;
 
         protected readonly string Username;
-
+        
         protected BaseClient(JiraRestClient jiraRestClient)
         {
             _jiraRestClient = jiraRestClient;

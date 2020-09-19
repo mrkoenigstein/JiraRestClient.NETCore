@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Text.Json.Serialization;
+using JiraRestClient.Net.Domain.Issue;
 
 namespace JiraRestClient.Net.Domain
 {
