@@ -2,10 +2,24 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <PackageId>JiraRestClient.Net</PackageId>
+        <Version>2.0.0</Version>
+        <Authors>Christian Schulze (cschulc@outlook.com)</Authors>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <LangVersion>latest</LangVersion>
+        <OutputType>Library</OutputType>
+        <IsPackable>true</IsPackable>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="System.Text.Json" Version="4.7.2" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="LICENSE.txt">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+    
 </Project>
