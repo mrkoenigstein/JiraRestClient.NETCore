@@ -1,0 +1,147 @@
+﻿{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+  "id": "10000",
+  "self": "http://localhost:2990/jira/rest/api/2/issue/10000",
+  "key": "DEMO-1",
+  "fields": {
+    "issuetype": {
+      "self": "http://localhost:2990/jira/rest/api/2/issuetype/10001",
+      "id": "10001",
+      "description": "Von Jira Software erstellt – nicht bearbeiten oder löschen. Vorgangstyp für eine User Story.",
+      "iconUrl": "http://localhost:2990/jira/images/icons/issuetypes/story.svg",
+      "name": "Story",
+      "subtask": false
+    },
+    "components": [],
+    "timespent": null,
+    "timeoriginalestimate": null,
+    "description": "*About Scrum*\n\nScrum is an iterative approach to Agile software development. The methodology has been around since the 1980s but was popularised by Jeff Sutherland and Ken Schwaber. \n\nScrum breaks the development of a product down in to discrete iterations (termed Sprints) that each deliver functionality that could potentially be shipped to users.\n\nThe Scrum Alliance offers an excellent [introduction to Scrum|http://www.scrumalliance.org/resources/47] that provides an overview of key Scrum concepts, stakeholders, processes and artefacts.",
+    "project": {
+      "self": "http://localhost:2990/jira/rest/api/2/project/10000",
+      "id": "10000",
+      "key": "DEMO",
+      "name": "Demo",
+      "projectTypeKey": "software",
+      "avatarUrls": {
+        "48x48": "http://localhost:2990/jira/secure/projectavatar?avatarId=10324",
+        "24x24": "http://localhost:2990/jira/secure/projectavatar?size=small&avatarId=10324",
+        "16x16": "http://localhost:2990/jira/secure/projectavatar?size=xsmall&avatarId=10324",
+        "32x32": "http://localhost:2990/jira/secure/projectavatar?size=medium&avatarId=10324"
+      }
+    },
+    "fixVersions": [
+      {
+        "self": "http://localhost:2990/jira/rest/api/2/version/10001",
+        "id": "10001",
+        "name": "Version 2.0",
+        "archived": false,
+        "released": false,
+        "releaseDate": "2020-09-22"
+      }
+    ],
+    "aggregatetimespent": null,
+    "resolution": null,
+    "timetracking": {},
+    "archiveddate": null,
+    "customfield_10006": 2.0,
+    "attachment": [],
+    "aggregatetimeestimate": null,
+    "resolutiondate": null,
+    "workratio": -1,
+    "summary": "As an Agile team, I'd like to learn about Scrum >> Click the \"DEMO-1\" link at the left of this row to see detail in the Description tab on the right",
+    "lastViewed": null,
+    "watches": {
+      "self": "http://localhost:2990/jira/rest/api/2/issue/DEMO-1/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "creator": {
+      "self": "http://localhost:2990/jira/rest/api/2/user?username=admin",
+      "name": "admin",
+      "key": "admin",
+      "emailAddress": "admin@admin.com",
+      "avatarUrls": {
+        "48x48": "https://www.gravatar.com/avatar/64e1b8d34f425d19e1ee2ea7236d3028?d=mm&s=48",
+        "24x24": "https://www.gravatar.com/avatar/64e1b8d34f425d19e1ee2ea7236d3028?d=mm&s=24",
+        "16x16": "https://www.gravatar.com/avatar/64e1b8d34f425d19e1ee2ea7236d3028?d=mm&s=16",
+        "32x32": "https://www.gravatar.com/avatar/64e1b8d34f425d19e1ee2ea7236d3028?d=mm&s=32"
+      },
+      "displayName": "admin",
+      "active": true,
+      "timeZone": "Europe/Berlin"
+    },
+    "subtasks": [],
+    "created": "2020-09-15T14:25:49.144+0200",
+    "reporter": {
+      "self": "http://localhost:2990/jira/rest/api/2/user?username=admin",
+      "name": "admin",
+      "key": "admin",
+      "emailAddress": "admin@admin.com",
+      "avatarUrls": {
+        "48x48": "https://www.gravatar.com/avatar/64e1b8d34f425d19e1ee2ea7236d3028?d=mm&s=48",
+        "24x24": "https://www.gravatar.com/avatar/64e1b8d34f425d19e1ee2ea7236d3028?d=mm&s=24",
+        "16x16": "https://www.gravatar.com/avatar/64e1b8d34f425d19e1ee2ea7236d3028?d=mm&s=16",
+        "32x32": "https://www.gravatar.com/avatar/64e1b8d34f425d19e1ee2ea7236d3028?d=mm&s=32"
+      },
+      "displayName": "admin",
+      "active": true,
+      "timeZone": "Europe/Berlin"
+    },
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "priority": {
+      "self": "http://localhost:2990/jira/rest/api/2/priority/3",
+      "iconUrl": "http://localhost:2990/jira/images/icons/priorities/medium.svg",
+      "name": "Medium",
+      "id": "3"
+    },
+    "customfield_10100": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@17c77da8[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@3072c541[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@697b1bb2[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@4f058311[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7e47ce0b[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@53335c8f[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@62246bd0[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@15a718e[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@41add038[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@8333ba6[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@4908bb9b[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@1b0c7535[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+    "labels": [],
+    "environment": null,
+    "timeestimate": null,
+    "aggregatetimeoriginalestimate": null,
+    "versions": [],
+    "duedate": null,
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "comment": {
+      "comments": [],
+      "maxResults": 0,
+      "total": 0,
+      "startAt": 0
+    },
+    "issuelinks": [],
+    "votes": {
+      "self": "http://localhost:2990/jira/rest/api/2/issue/DEMO-1/votes",
+      "votes": 0,
+      "hasVoted": false
+    },
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "assignee": null,
+    "archivedby": null,
+    "updated": "2020-09-15T14:25:49.144+0200",
+    "status": {
+      "self": "http://localhost:2990/jira/rest/api/2/status/10000",
+      "description": "",
+      "iconUrl": "http://localhost:2990/jira/",
+      "name": "Aufgaben",
+      "id": "10000",
+      "statusCategory": {
+        "self": "http://localhost:2990/jira/rest/api/2/statuscategory/2",
+        "id": 2,
+        "key": "new",
+        "colorName": "blue-gray",
+        "name": "Aufgaben"
+      }
+    }
+  }
+}

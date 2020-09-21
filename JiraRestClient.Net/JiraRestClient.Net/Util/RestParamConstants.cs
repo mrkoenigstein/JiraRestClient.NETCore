@@ -1,23 +1,29 @@
-﻿namespace Cschulc.Jira.Util
+﻿namespace JiraRestClient.Net.Util
 {
     public class RestParamConstants
     {
-        public const string USERNAME = "username";
+        public const string Username = "username";
 
-        public const string EXPAND = "expand";
+        public const string Expand = "expand";
 
-        public const string TRANSITIONS_FIELDS = "transitions.fields";
+        public const string TransitionsFields = "transitions.fields";
 
-        public const string RENDERED_FIELDS = "renderedFields";
+        public const string RenderedFields = "renderedFields";
 
-        public const string ISSUEKEY = "issueKey";
+        public const string IssueKey = "issueKey";
 
-        public const string START_AT = "startAt";
+        public const string IssueId = "IssueId";
 
-        public const string MAX_RESULTS = "maxResults";
+        public const string StartAt = "startAt";
 
-        public const string PROJECT = "project";
+        public const string MaxResults = "maxResults";
 
-        public const string FIELDS = "fields";
+        public const string Project = "project";
+
+        public const string ProjectKey = "projectKey";
+
+        public const string ProjectId = "projectId";
+
+        public const string Fields = "fields";
     }
 }

@@ -1,0 +1,233 @@
+﻿{
+  "id": "https://docs.atlassian.com/jira/REST/schema/issue-update#",
+  "title": "Issue Update",
+  "type": "object",
+  "properties": {
+    "transition": {
+      "title": "Transition",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "to": {
+          "title": "Status",
+          "type": "object",
+          "properties": {
+            "statusColor": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "iconUrl": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "id": {
+              "type": "string"
+            },
+            "statusCategory": {
+              "title": "Status Category",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "integer"
+                },
+                "key": {
+                  "type": "string"
+                },
+                "colorName": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "additionalProperties": false
+        },
+        "fields": {
+          "type": "object",
+          "patternProperties": {
+            ".+": {
+              "title": "Field Meta",
+              "type": "object",
+              "properties": {
+                "required": {
+                  "type": "boolean"
+                },
+                "schema": {
+                  "title": "Json Type",
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "items": {
+                      "type": "string"
+                    },
+                    "system": {
+                      "type": "string"
+                    },
+                    "custom": {
+                      "type": "string"
+                    },
+                    "customId": {
+                      "type": "integer"
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "name": {
+                  "type": "string"
+                },
+                "fieldId": {
+                  "type": "string"
+                },
+                "autoCompleteUrl": {
+                  "type": "string"
+                },
+                "hasDefaultValue": {
+                  "type": "boolean"
+                },
+                "operations": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "allowedValues": {
+                  "type": "array",
+                  "items": {}
+                },
+                "defaultValue": {}
+              },
+              "additionalProperties": false,
+              "required": [
+                "required"
+              ]
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "fields": {
+      "type": "object",
+      "patternProperties": {
+        ".+": {}
+      },
+      "additionalProperties": false
+    },
+    "update": {
+      "type": "object",
+      "patternProperties": {
+        ".+": {
+          "type": "array",
+          "items": {
+            "title": "Field Operation",
+            "type": "object"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "historyMetadata": {
+      "title": "History Metadata",
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "descriptionKey": {
+          "type": "string"
+        },
+        "activityDescription": {
+          "type": "string"
+        },
+        "activityDescriptionKey": {
+          "type": "string"
+        },
+        "emailDescription": {
+          "type": "string"
+        },
+        "emailDescriptionKey": {
+          "type": "string"
+        },
+        "actor": {
+          "$ref": "#/definitions/history-metadata-participant"
+        },
+        "generator": {
+          "$ref": "#/definitions/history-metadata-participant"
+        },
+        "cause": {
+          "$ref": "#/definitions/history-metadata-participant"
+        },
+        "extraData": {
+          "type": "object",
+          "patternProperties": {
+            ".+": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "properties": {
+      "type": "array",
+      "items": {
+        "title": "Entity Property",
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "value": {}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "definitions": {
+    "history-metadata-participant": {
+      "title": "History Metadata Participant",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "displayNameKey": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "avatarUrl": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

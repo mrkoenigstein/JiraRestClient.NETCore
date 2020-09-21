@@ -1,5 +1,6 @@
 using FluentAssertions;
 using JiraRestClient.Net.Jql;
+using JiraRestClient.Net.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace JiraRestClient.Net.Test
@@ -13,7 +14,7 @@ namespace JiraRestClient.Net.Test
             var jsb = new JqlSearchBean();
             var builder = new JqlBuilder();
             var jql = builder.AddCondition(EField.Project, EOperator.EQUALS, "DEMO")
-                    .And().AddCondition(EField.Status, EOperator.EQUALS, JqlConstants.StatusInProgress)
+                    .And().AddCondition(EField.Status, EOperator.EQUALS, Constants.StatusInProgress)
                     .OrderBy(SortOrder.Asc, EField.Created);
             jsb.Jql = jql;
             jsb.AddField(EField.IssueKey, EField.Status, EField.Due, EField.Summary, EField.IssueType, EField.Priority, EField.Updated, EField.Transitions);

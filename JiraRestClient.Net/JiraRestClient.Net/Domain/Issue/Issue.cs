@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
-namespace JiraRestClient.Net.Domain
+namespace JiraRestClient.Net.Domain.Issue
 {
     public class Issue : KeyBase
     {
@@ -181,6 +180,8 @@ namespace JiraRestClient.Net.Domain
         public string IconUrl { get; set; }
         [JsonPropertyName("statuscategory")]
         public StatusCategory StatusCategory { get; set; }
+        [JsonPropertyName("statusColor")]
+        public string StatusColor { get; set; }
     }
     
     public class Attachment
@@ -326,7 +327,15 @@ namespace JiraRestClient.Net.Domain
 
     public class Transition : KeyBase
     {
+        
+        [JsonPropertyName("fields")]
+        public TransitionFields Fields { get; set; }
+        
         [JsonPropertyName("to")]
         public Status To { get; set; }
+    }
+
+    public class TransitionFields
+    {
     }
 }

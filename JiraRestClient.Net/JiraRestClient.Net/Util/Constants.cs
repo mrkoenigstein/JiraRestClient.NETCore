@@ -1,6 +1,6 @@
-﻿namespace JiraRestClient.Net.Jql
+﻿namespace JiraRestClient.Net.Util
 {
-    public static class JqlConstants
+    public static class Constants
     {
         public const string Project = "project";
 
