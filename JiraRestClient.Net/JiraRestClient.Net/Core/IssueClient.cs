@@ -166,7 +166,10 @@ namespace JiraRestClient.Net.Core
                 case HttpStatusCode.SwitchingProtocols:
                     break;
                 case HttpStatusCode.Unauthorized:
-                    break;
+                    return new IssueResponse
+                    {
+                        ErrorMessages  = new List<string>{"Unauthorized"}
+                    };
                 case HttpStatusCode.UnsupportedMediaType:
                     break;
                 case HttpStatusCode.Unused:
@@ -176,9 +179,11 @@ namespace JiraRestClient.Net.Core
                 case HttpStatusCode.UseProxy:
                     break;
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    return new IssueResponse
+                    {
+                        ErrorMessages  = new List<string>{$"HttpStatusCode: {httpResponseMessage.StatusCode}"}
+                    };
             }
-
             return null;
         }
     }

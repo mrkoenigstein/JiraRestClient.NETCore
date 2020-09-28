@@ -10,5 +10,6 @@
     &lt;TestId&gt;MSTest::A305E2B0-796F-42F5-9BBD-FFEE7A8D7BCE::.NETCoreApp,Version=v3.1::JiraRestClient.Net.Test.TestProjectClient.TestGetAllProjects&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;MSTest::A305E2B0-796F-42F5-9BBD-FFEE7A8D7BCE::.NETCoreApp,Version=v3.1::JiraRestClient.Net.Test.TestPermissionsClient.TestGetMyPermissions&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;MSTest::A305E2B0-796F-42F5-9BBD-FFEE7A8D7BCE::.NETCoreApp,Version=v3.1::JiraRestClient.Net.Test.TestIssueClient.TestCreateIssue&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::A305E2B0-796F-42F5-9BBD-FFEE7A8D7BCE::.NETCoreApp,Version=v3.1::JiraRestClient.Net.Test.TestProjectClient.TestProjectByKey&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

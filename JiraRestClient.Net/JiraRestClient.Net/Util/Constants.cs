@@ -40,26 +40,28 @@
 
         //Issue Type für die JQL Suche
 
-        public const string IssuetypeImprovement = "improvement";
+        public const string IssueTypeImprovement = "improvement";
 
-        public const string IssuetypeBug = "bug";
+        public const string IssueTypeBug = "bug";
 
-        public const string IssuetypeNewFeature = "new feature";
+        public const string IssueTypeNewFeature = "new feature";
 
-        public const string IssuetypeSubtask = "sub-task";
+        public const string IssueTypeSubtask = "sub-task";
 
-        public const string IssuetypeTask = "task";
+        public const string IssueTypeTask = "task";
+
+        public const string IssueTypeStory = "Story";
 
         //Priority für die SQL Suche
+        
+        public const string PriorityHighest = "1";
 
-        public const string PriorityMajor = "major";
+        public const string PriorityHigh = "2";
+        
+        public const string PriorityMedium = "3";
 
-        public const string PriorityBlocker = "blocker";
+        public const string PriorityLow = "4";
 
-        public const string PriorityCritical = "critical";
-
-        public const string PriorityMinor = "minor";
-
-        public const string PriorityTrivial = "trivial";
+        public const string PriorityLowest = "5";
     }
 }

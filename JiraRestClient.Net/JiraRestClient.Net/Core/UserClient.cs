@@ -1,3 +1,4 @@
+using System.Net;
 using System.Runtime.Serialization.Json;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -18,9 +19,14 @@ namespace JiraRestClient.Net.Core
             var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.User);
             restUriBuilder.Query = "username=" + Username;
             var completeUri = restUriBuilder.ToString();
-            var stream = Client.GetStringAsync(completeUri);
-            var streamResult = stream.Result;
-            return  JsonSerializer.Deserialize<User>(streamResult);
+            var task = Client.GetAsync(completeUri);
+            var httpResponseMessage = task.Result;
+            if (httpResponseMessage.StatusCode != HttpStatusCode.OK)
+            {
+                return null;
+            }
+            var streamResult = httpResponseMessage.Content.ReadAsStringAsync();
+            return  JsonSerializer.Deserialize<User>(streamResult.Result);
         }
 
         public User GetUserByUsername(string username){

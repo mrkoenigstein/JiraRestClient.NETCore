@@ -19,14 +19,13 @@ namespace JiraRestClient.Net.Core
 
         public Project GetProjectByKey(string key)
         {
-            var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.Project);
-            restUriBuilder.Query = RestParamConstants.Project + "=" + key;
+            var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.Project, key);
             var completeUri = restUriBuilder.ToString();
             var stream = Client.GetStringAsync(completeUri);
             return JsonSerializer.Deserialize<Project>(stream.Result);
         }
 
-        public List<Project> GetAllProjects()
+        public IEnumerable<Project> GetAllProjects()
         {
             var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.Project);
             var stream = Client.GetStringAsync(restUriBuilder.ToString());

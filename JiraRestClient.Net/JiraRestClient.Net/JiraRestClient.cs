@@ -13,8 +13,9 @@ namespace JiraRestClient.Net
 
         public Uri BaseUri { get; }
 
-        public string Username { get; }
-        
+        public string Username { get; private set; }
+
+        private string Base64Token { get; set; }
         
         private IssueClient _issueClient;
 
@@ -28,6 +29,7 @@ namespace JiraRestClient.Net
 
         private PermissionsClient _permissionsClient;
 
+
         public JiraRestClient(Uri uri, string username, string password)
         {
             ServicePointManager.ServerCertificateValidationCallback +=
@@ -36,23 +38,54 @@ namespace JiraRestClient.Net
             BaseUri = uri;
             Username = username;
             var bytes = Encoding.ASCII.GetBytes(username + ":" + password);
-            var token = Convert.ToBase64String(bytes);
+            Base64Token = Convert.ToBase64String(bytes);
+            Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Base64Token);
+        }
+
+        public JiraRestClient(Uri uri, string token)
+        {
+            ServicePointManager.ServerCertificateValidationCallback +=
+                (sender, cert, chain, sslPolicyErrors) => true;
+            Client = new HttpClient();
+            BaseUri = uri;
             Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", token);
         }
 
-        public IssueClient IssueClient => _issueClient ?? (_issueClient = new IssueClient(this));
+        public JiraRestClient(Uri uri)
+        {
+            ServicePointManager.ServerCertificateValidationCallback +=
+                (sender, cert, chain, sslPolicyErrors) => true;
+            Client = new HttpClient();
+            BaseUri = uri;
+        }
 
+        public string Login(string username, string password)
+        {
+            Username = username;
+            var bytes = Encoding.ASCII.GetBytes(username + ":" + password);
+            Base64Token = Convert.ToBase64String(bytes);
+            Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Base64Token);
+            return Base64Token;
+        }
 
-        public UserClient UserClient => _userClient ?? (_userClient = new UserClient(this));
+        public void Login(string base64Token)
+        {
+            Base64Token = base64Token;
+            Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Base64Token);
+        }
 
-        public SearchClient SearchClient => _searchClient ?? (_searchClient = new SearchClient(this));
+        public IssueClient IssueClient => _issueClient ??= new IssueClient(this);
+        
+        public UserClient UserClient => _userClient ??= new UserClient(this);
 
-        public SystemClient SystemClient => _systemClient ?? (_systemClient = new SystemClient(this));
+        public SearchClient SearchClient => _searchClient ??= new SearchClient(this);
 
-        public ProjectClient ProjectClient => _projectClient ?? (_projectClient = new ProjectClient(this));
+        public SystemClient SystemClient => _systemClient ??= new SystemClient(this);
+
+        public ProjectClient ProjectClient => _projectClient ??= new ProjectClient(this);
 
         public PermissionsClient PermissionsClient =>
-            _permissionsClient ?? (_permissionsClient = new PermissionsClient(this));
+            _permissionsClient ??= new PermissionsClient(this);
 
 
     }

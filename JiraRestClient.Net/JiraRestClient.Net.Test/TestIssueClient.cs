@@ -19,7 +19,7 @@ namespace JiraRestClient.Net.Test
             var issue = RestClient.IssueClient.GetIssueByKey(IssuekeyToSearch);
             issue.Should().NotBeNull();
         }
-
+        
         [TestMethod]
         public void TestGetIssueByKeyWithFields()
         {
