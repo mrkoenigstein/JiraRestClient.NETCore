@@ -1,12 +1,10 @@
-using System;
 using System.Collections.Generic;
+using System.IO;
 using FluentAssertions;
 using JiraRestClient.Net.Domain;
 using JiraRestClient.Net.Domain.Issue;
 using JiraRestClient.Net.Jql;
-using JiraRestClient.Net.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Version = JiraRestClient.Net.Domain.Version;
 
 namespace JiraRestClient.Net.Test
 {
@@ -61,6 +59,21 @@ namespace JiraRestClient.Net.Test
             var issueResponse = RestClient.IssueClient.CreateIssue(issueUpdate);
             issueResponse.Should().NotBeNull();
             issueResponse.Key.Should().NotBeNullOrEmpty();
+        }
+
+
+        [TestMethod]
+        public void TestAddAttachment()
+        {
+            var png = File.OpenRead("./Resources/frogs.png");
+            var pdf = File.OpenRead("./Resources/test.pdf");
+            
+            var streams = new List<FileStream>
+            {
+                png, pdf
+            };
+            var attachments = RestClient.IssueClient.AddAttachment("DEMO-3", streams);
+            attachments.Should().NotBeEmpty().And.HaveCount(2);
         }
     }
 }

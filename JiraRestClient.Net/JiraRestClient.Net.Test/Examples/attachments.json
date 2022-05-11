@@ -1,0 +1,49 @@
+[
+  {
+    "self": "http://localhost:8080/rest/api/2/attachment/10001",
+    "id": "10001",
+    "filename": "frogs.png",
+    "author": {
+      "self": "http://localhost:8080/rest/api/2/user?username=admin",
+      "name": "admin",
+      "key": "JIRAUSER10000",
+      "emailAddress": "cschulc@outlook.com",
+      "avatarUrls": {
+        "48x48": "https://www.gravatar.com/avatar/0be77329bf7ff7015df5c513855589e9?d=mm&s=48",
+        "24x24": "https://www.gravatar.com/avatar/0be77329bf7ff7015df5c513855589e9?d=mm&s=24",
+        "16x16": "https://www.gravatar.com/avatar/0be77329bf7ff7015df5c513855589e9?d=mm&s=16",
+        "32x32": "https://www.gravatar.com/avatar/0be77329bf7ff7015df5c513855589e9?d=mm&s=32"
+      },
+      "displayName": "Administrator",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "created": "2022-05-11T07:36:20.170+0000",
+    "size": 866805,
+    "content": "http://localhost:8080/secure/attachment/10001/frogs.png",
+    "thumbnail": "http://localhost:8080/secure/thumbnail/10001/_thumb_10001.png"
+  },
+  {
+    "self": "http://localhost:8080/rest/api/2/attachment/10002",
+    "id": "10002",
+    "filename": "test.pdf",
+    "author": {
+      "self": "http://localhost:8080/rest/api/2/user?username=admin",
+      "name": "admin",
+      "key": "JIRAUSER10000",
+      "emailAddress": "cschulc@outlook.com",
+      "avatarUrls": {
+        "48x48": "https://www.gravatar.com/avatar/0be77329bf7ff7015df5c513855589e9?d=mm&s=48",
+        "24x24": "https://www.gravatar.com/avatar/0be77329bf7ff7015df5c513855589e9?d=mm&s=24",
+        "16x16": "https://www.gravatar.com/avatar/0be77329bf7ff7015df5c513855589e9?d=mm&s=16",
+        "32x32": "https://www.gravatar.com/avatar/0be77329bf7ff7015df5c513855589e9?d=mm&s=32"
+      },
+      "displayName": "Administrator",
+      "active": true,
+      "timeZone": "Etc/UTC"
+    },
+    "created": "2022-05-11T07:36:20.174+0000",
+    "size": 50908,
+    "content": "http://localhost:8080/secure/attachment/10002/test.pdf"
+  }
+]

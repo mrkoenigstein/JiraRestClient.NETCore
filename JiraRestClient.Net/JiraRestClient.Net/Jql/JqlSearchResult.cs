@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using JiraRestClient.Net.Domain;
 using JiraRestClient.Net.Domain.Issue;
 
 namespace JiraRestClient.Net.Jql

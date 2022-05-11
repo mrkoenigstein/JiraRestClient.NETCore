@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace JiraRestClient.Net.Jql
+﻿namespace JiraRestClient.Net.Jql
 {
     public class EOperator
     {

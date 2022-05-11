@@ -1,4 +1,3 @@
-using Cschulc.Jira.Util;
 using JiraRestClient.Net.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

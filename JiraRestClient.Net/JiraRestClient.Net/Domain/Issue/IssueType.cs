@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace JiraRestClient.Net.Domain
+namespace JiraRestClient.Net.Domain.Issue
 {
     public class IssueType : Base
     {

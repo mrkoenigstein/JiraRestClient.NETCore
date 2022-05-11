@@ -3,8 +3,8 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <PackageId>JiraRestClient.Net</PackageId>
-        <Version>2.0.1</Version>
-        <Authors>Christian Schulze (cschulc@outlook.com)</Authors>
+        <Version>2.1</Version>
+        <Authors>Christian Schulze (mrkoenigstein@outlook.com)</Authors>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <LangVersion>latest</LangVersion>
         <OutputType>Library</OutputType>

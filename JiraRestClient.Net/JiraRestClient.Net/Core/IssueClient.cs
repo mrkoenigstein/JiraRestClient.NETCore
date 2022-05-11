@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
-using Cschulc.Jira.Util;
 using JiraRestClient.Net.Domain.Issue;
 using JiraRestClient.Net.Util;
 
@@ -185,6 +185,33 @@ namespace JiraRestClient.Net.Core
                     };
             }
             return null;
+        }
+
+
+        public List<Attachment> AddAttachment(string issueKey, List<FileStream> files)
+        {
+            var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.Issue, issueKey, RestPathConstants.Attachments);
+
+            using var multipartFormContent = new MultipartFormDataContent();
+            multipartFormContent.Headers.Add("X-Atlassian-Token", "nocheck");
+            foreach (var file in files)
+            {
+                var fileName = GetFileName(file.Name);
+                var contentStream = new StreamContent(file);
+                multipartFormContent.Add(contentStream, "file", fileName);
+            }
+            var completeUri = restUriBuilder.ToString();
+            var postAsync = Client.PostAsync(completeUri, multipartFormContent);
+            var httpResponseMessage = postAsync.Result;
+            var response = httpResponseMessage.Content.ReadAsStringAsync();
+            return JsonSerializer.Deserialize<List<Attachment>>(response.Result);
+            
+
+            string GetFileName(string path)
+            {
+                var lastIndexOf = path.LastIndexOf(Path.DirectorySeparatorChar.ToString(), StringComparison.Ordinal) + 1;
+                return path.Substring(lastIndexOf);
+            }
         }
     }
 }

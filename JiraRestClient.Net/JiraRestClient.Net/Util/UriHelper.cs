@@ -1,39 +1,31 @@
 ﻿using System;
 using System.Net;
-using JiraRestClient.Net.Util;
 
-namespace Cschulc.Jira.Util
+namespace JiraRestClient.Net.Util
 {
     public static class UriHelper
     {
-        public static Uri AddQuery(Uri baseUri, string name, string value)
+        public static UriBuilder AddQuery(UriBuilder uriBuilder, string name, string value)
         {
-            var ub = new UriBuilder(baseUri);
-            string query = ub.Query;
-            return ub.Uri;
-        }
-
-        public static UriBuilder AddQuery(UriBuilder uribuilder, string name, string value)
-        {
-            var query = uribuilder.Query;
+            var query = uriBuilder.Query;
             var queryParam = name + "=" + WebUtility.UrlEncode(value);
-            if(String.IsNullOrEmpty(query) == true)
+            if(string.IsNullOrEmpty(query))
             {
-                uribuilder.Query = queryParam;
+                uriBuilder.Query = queryParam;
             }
             else
             {
-                uribuilder.Query = query + "&" + queryParam;
+                uriBuilder.Query = query + "&" + queryParam;
             }
-            return uribuilder;
+            return uriBuilder;
         }
 
 
         public static Uri AddIssueKey(Uri baseUri, string issueKey)
         {
-            string temp = baseUri.AbsoluteUri + "/";
-            Uri retval = new Uri(temp);
-            return new Uri(retval, issueKey);
+            var temp = baseUri.AbsoluteUri + "/";
+            var retVal = new Uri(temp);
+            return new Uri(retVal, issueKey);
         }
 
         public static UriBuilder BuildPath(Uri baseUri, params string[] paths)
