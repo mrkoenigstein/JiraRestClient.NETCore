@@ -1,8 +1,5 @@
 using System.Collections.Generic;
-using System.Runtime.Serialization.Json;
 using System.Text.Json;
-using System.Threading.Tasks;
-using Cschulc.Jira.Util;
 using JiraRestClient.Net.Domain;
 using JiraRestClient.Net.Util;
 

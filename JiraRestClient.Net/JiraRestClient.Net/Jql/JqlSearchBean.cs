@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Cschulc.Jira.Jql;
+﻿using System.Collections.Generic;
 
 namespace JiraRestClient.Net.Jql
 {

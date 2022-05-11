@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using Cschulc.Jira.Jql;
 
 namespace JiraRestClient.Net.Jql
 {

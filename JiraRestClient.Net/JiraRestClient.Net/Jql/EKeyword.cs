@@ -1,4 +1,4 @@
-﻿namespace Cschulc.Jira.Jql
+﻿namespace JiraRestClient.Net.Jql
 {
     public class EKeyword
     {

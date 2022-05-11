@@ -1,5 +1,4 @@
-﻿using Cschulc.Jira.Util;
-using JiraRestClient.Net.Util;
+﻿using JiraRestClient.Net.Util;
 
 namespace JiraRestClient.Net.Jql
 {

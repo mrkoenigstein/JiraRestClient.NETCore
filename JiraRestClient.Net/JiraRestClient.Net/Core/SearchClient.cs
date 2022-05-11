@@ -1,7 +1,6 @@
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
-using Cschulc.Jira.Util;
 using JiraRestClient.Net.Jql;
 using JiraRestClient.Net.Util;
 

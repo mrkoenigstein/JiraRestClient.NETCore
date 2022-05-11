@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Text.Json;
-using Cschulc.Jira.Util;
 using JiraRestClient.Net.Domain;
 using JiraRestClient.Net.Domain.Issue;
 using JiraRestClient.Net.Util;
