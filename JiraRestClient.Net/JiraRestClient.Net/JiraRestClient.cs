@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using JiraRestClient.Net.Core;
+using JiraRestClient.Net.Core.Extension;
 using JiraRestClient.Net.Util;
 
 namespace JiraRestClient.Net;
@@ -17,7 +18,7 @@ public class JiraRestClient
     public string Username { get; private set; }
 
     private string Base64Token { get; set; }
-        
+
     private IssueClient _issueClient;
 
     private UserClient _userClient;
@@ -29,7 +30,7 @@ public class JiraRestClient
     private ProjectClient _projectClient;
 
     private PermissionsClient _permissionsClient;
-        
+
     /// <summary>
     /// 
     /// </summary>
@@ -47,8 +48,8 @@ public class JiraRestClient
         {
             versionPath = RestPathConstants.BaseRestPath;
         }
-        var uriBuilder = UriHelper.BuildPath(uri, versionPath);
-        BaseUri = uriBuilder.Uri;
+
+        BaseUri = uri.AddPaths(versionPath);
         Username = username;
         var bytes = Encoding.ASCII.GetBytes(username + ":" + password);
         Base64Token = Convert.ToBase64String(bytes);
@@ -88,7 +89,7 @@ public class JiraRestClient
     }
 
     public IssueClient IssueClient => _issueClient ??= new IssueClient(this);
-        
+
     public UserClient UserClient => _userClient ??= new UserClient(this);
 
     public SearchClient SearchClient => _searchClient ??= new SearchClient(this);
@@ -99,6 +100,4 @@ public class JiraRestClient
 
     public PermissionsClient PermissionsClient =>
         _permissionsClient ??= new PermissionsClient(this);
-
-
 }

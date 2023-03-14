@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
+using JiraRestClient.Net.Core.Extension;
 using JiraRestClient.Net.Domain.Issue;
 using JiraRestClient.Net.Util;
 
@@ -26,7 +27,7 @@ namespace JiraRestClient.Net.Core
         /// <returns>A async Task containing the Issue</returns>
         public Issue GetIssueByKey(string key)
         {
-            var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.Issue, key);
+            var restUriBuilder = BaseUri.AddPaths(RestPathConstants.Issue, key);
             var completeUri = restUriBuilder.ToString();
             var stream = Client.GetStringAsync(completeUri);
             var streamResult = stream.Result;
@@ -36,20 +37,20 @@ namespace JiraRestClient.Net.Core
 
         public Issue GetIssueByKey(string key, List<string> fields, List<string> expand)
         {
-            var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.Issue, key);
+            var uri = BaseUri.AddPaths(RestPathConstants.Issue, key);
             if (fields is { Count: > 0 })
             {
                 var fieldsParam = string.Join(",", fields);
-                UriHelper.AddQuery(restUriBuilder, RestParamConstants.Fields, fieldsParam);
+                uri.AddQuery($"{RestParamConstants.Fields}={fieldsParam}");
             }
 
             if (expand is { Count: > 0 })
             {
                 var expandParam = string.Join(",", expand);
-                UriHelper.AddQuery(restUriBuilder, RestParamConstants.Expand, expandParam);
+                uri.AddQuery($"{RestParamConstants.Expand}={expandParam}");
             }
 
-            var completeUri = restUriBuilder.ToString();
+            var completeUri = uri.ToString();
             var stream = Client.GetStringAsync(completeUri);
             var streamResult = stream.Result;
             return JsonSerializer.Deserialize<Issue>(streamResult);
@@ -61,7 +62,7 @@ namespace JiraRestClient.Net.Core
             {
                 IgnoreNullValues = true
             });
-            var uri = UriHelper.BuildPath(BaseUri, RestPathConstants.Issue);
+            var uri = BaseUri.AddPaths(RestPathConstants.Issue);
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
             var response = Client.PostAsync(uri.ToString(), httpContent);
             var httpResponseMessage = response.Result;
@@ -168,7 +169,7 @@ namespace JiraRestClient.Net.Core
                 case HttpStatusCode.Unauthorized:
                     return new IssueResponse
                     {
-                        ErrorMessages  = new List<string>{"Unauthorized"}
+                        ErrorMessages = new List<string> { "Unauthorized" }
                     };
                 case HttpStatusCode.UnsupportedMediaType:
                     break;
@@ -181,16 +182,18 @@ namespace JiraRestClient.Net.Core
                 default:
                     return new IssueResponse
                     {
-                        ErrorMessages  = new List<string>{$"HttpStatusCode: {httpResponseMessage.StatusCode}"}
+                        ErrorMessages = new List<string> { $"HttpStatusCode: {httpResponseMessage.StatusCode}" }
                     };
             }
+
             return null;
         }
 
 
-        public List<Attachment> AddAttachment(string issueKey, List<FileStream> files)
+        public IEnumerable<Attachment> AddAttachment(string issueKey, List<FileStream> files)
         {
-            var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.Issue, issueKey, RestPathConstants.Attachments);
+            var restUriBuilder =
+                BaseUri.AddPaths(RestPathConstants.Issue, issueKey, RestPathConstants.Attachments);
 
             using var multipartFormContent = new MultipartFormDataContent();
             multipartFormContent.Headers.Add("X-Atlassian-Token", "nocheck");
@@ -200,16 +203,18 @@ namespace JiraRestClient.Net.Core
                 var contentStream = new StreamContent(file);
                 multipartFormContent.Add(contentStream, "file", fileName);
             }
+
             var completeUri = restUriBuilder.ToString();
             var postAsync = Client.PostAsync(completeUri, multipartFormContent);
             var httpResponseMessage = postAsync.Result;
             var response = httpResponseMessage.Content.ReadAsStringAsync();
             return JsonSerializer.Deserialize<List<Attachment>>(response.Result);
-            
+
 
             string GetFileName(string path)
             {
-                var lastIndexOf = path.LastIndexOf(Path.DirectorySeparatorChar.ToString(), StringComparison.Ordinal) + 1;
+                var lastIndexOf = path.LastIndexOf(Path.DirectorySeparatorChar.ToString(), StringComparison.Ordinal) +
+                                  1;
                 return path.Substring(lastIndexOf);
             }
         }

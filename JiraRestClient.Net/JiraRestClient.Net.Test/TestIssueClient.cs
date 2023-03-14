@@ -14,7 +14,7 @@ namespace JiraRestClient.Net.Test
         [TestMethod]
         public void TestGetIssueByKey()
         {
-            var issue = RestClient.IssueClient.GetIssueByKey(IssuekeyToSearch);
+            var issue = RestClient.IssueClient.GetIssueByKey(IssueKeyToSearch);
             issue.Should().NotBeNull();
         }
         
@@ -26,7 +26,7 @@ namespace JiraRestClient.Net.Test
             {
                 EField.Renderedfields.Field, EField.Transitions.Field, EField.Changelog.Field
             };
-            var issue = RestClient.IssueClient.GetIssueByKey(IssuekeyToSearch, fields, expands);
+            var issue = RestClient.IssueClient.GetIssueByKey(IssueKeyToSearch, fields, expands);
             issue.Should().NotBeNull();
             issue.Fields.Summary.Should().NotBeNull();
             issue.Fields.Description.Should().NotBeNull();
@@ -56,15 +56,15 @@ namespace JiraRestClient.Net.Test
                     Summary = "Created via RestAPI",
                     Project = new Project
                     {
-                        Id = "10000"
+                        Key = ProjectKey
                     },
                     Issuetype = new IssueType
                     {
-                        Id = "10001"
+                        Id = "10009"
                     },
                     Priority = new Priority
                     {
-                        Id = "3"
+                        Id = "2"
                     }
                 }
             };

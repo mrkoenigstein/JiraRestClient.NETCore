@@ -40,5 +40,9 @@
         public const string ServerInfo = "serverInfo";
 
         public const string MyPermissions = "mypermissions";
+
+        public const string Bulk = "bulk";
+        
+        public const string Migration = "migration";
     }
 }

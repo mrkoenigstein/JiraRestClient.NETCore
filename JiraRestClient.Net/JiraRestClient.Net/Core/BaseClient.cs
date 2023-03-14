@@ -8,8 +8,6 @@ namespace JiraRestClient.Net.Core
     /// </summary>
     public abstract class BaseClient
     {
-        private JiraRestClient _jiraRestClient;
-
         protected readonly Uri BaseUri;
 
         protected readonly HttpClient Client;
@@ -18,7 +16,6 @@ namespace JiraRestClient.Net.Core
         
         protected BaseClient(JiraRestClient jiraRestClient)
         {
-            _jiraRestClient = jiraRestClient;
             Client = jiraRestClient.Client;
             BaseUri = jiraRestClient.BaseUri;
             Username = jiraRestClient.Username;
