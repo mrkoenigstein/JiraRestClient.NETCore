@@ -37,13 +37,13 @@ namespace JiraRestClient.Net.Core
         public Issue GetIssueByKey(string key, List<string> fields, List<string> expand)
         {
             var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.Issue, key);
-            if (fields != null && fields.Count > 0)
+            if (fields is { Count: > 0 })
             {
                 var fieldsParam = string.Join(",", fields);
                 UriHelper.AddQuery(restUriBuilder, RestParamConstants.Fields, fieldsParam);
             }
 
-            if (expand != null && expand.Count > 0)
+            if (expand is { Count: > 0 })
             {
                 var expandParam = string.Join(",", expand);
                 UriHelper.AddQuery(restUriBuilder, RestParamConstants.Expand, expandParam);

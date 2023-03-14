@@ -34,8 +34,8 @@ namespace JiraRestClient.Net.Util
             {
                 baseUri = new Uri(baseUri.AbsoluteUri + "/");
             }
-            UriBuilder uribuilder = new UriBuilder(baseUri + RestPathConstants.BaseRestPath);
-            var path = uribuilder.Path;
+            var uriBuilder = new UriBuilder(baseUri);
+            var path = uriBuilder.Path;
             foreach (var item in paths)
             {
                 if(item.StartsWith("/") == false){
@@ -44,8 +44,8 @@ namespace JiraRestClient.Net.Util
                     path+=item;
                 }
             }
-            uribuilder.Path = path;
-            return uribuilder;
+            uriBuilder.Path = path;
+            return uriBuilder;
         }
     }
 }

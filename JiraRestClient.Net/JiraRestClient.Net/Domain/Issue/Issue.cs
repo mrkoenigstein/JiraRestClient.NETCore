@@ -20,10 +20,71 @@ namespace JiraRestClient.Net.Domain.Issue
         [JsonPropertyName("changelog")]
         public ChangeLog Changelog { get; set; }
     }
-
-
+    
+    public class Aggregateprogress
+    {
+        [JsonPropertyName("progress")]
+        public int? Progress { get; set; }
+        [JsonPropertyName("total")]
+        public int? Total { get; set; }
+    }
+    
+    public class Attachment
+    {
+        [JsonPropertyName("self")]
+        public string Self { get; set; }
+        [JsonPropertyName("id")]
+        public string Id { get; set; }
+        [JsonPropertyName("filename")]
+        public string Filename { get; set; }
+        [JsonPropertyName("author")]
+        public User Author { get; set; }
+        [JsonPropertyName("created")]
+        public string Created { get; set; }
+        [JsonPropertyName("size")]
+        public int? Size { get; set; }
+        [JsonPropertyName("mimetype")]
+        public string MimeType { get; set; }
+        [JsonPropertyName("content")]
+        public string Content { get; set; }
+        [JsonPropertyName("thumbnail")]
+        public string Thumbnail { get; set; }
+    }
+    
+    public class Attrs
+    {
+        [JsonPropertyName("url")]
+        public string url { get; set; }
+    }
+    
+    public class Content
+    {
+        [JsonPropertyName("type")]
+        public string Type { get; set; }
+        [JsonPropertyName("content")]
+        public List<Content> Contents { get; set; }
+        [JsonPropertyName("text")]
+        public string Text { get; set; }
+        [JsonPropertyName("attrs")]
+        public Attrs Attrs { get; set; }
+    }
+    
+    public class Description
+    {
+        [JsonPropertyName("version")]
+        public int Version { get; set; }
+        [JsonPropertyName("type")]
+        public string Type { get; set; }
+        [JsonPropertyName("content")]
+        public List<Content> Content { get; set; }
+    }
+    
+    
     public class IssueFields
     {
+        [JsonPropertyName("parent")]
+        public Issue Parent { get; set; }
+        
         [JsonPropertyName("summary")]
         public string Summary { get; set; }
         [JsonPropertyName("progress")]
@@ -53,7 +114,7 @@ namespace JiraRestClient.Net.Domain.Issue
         [JsonPropertyName("updated")]
         public string Updated { get; set; }
         [JsonPropertyName("description")]
-        public string Description { get; set; }
+        public Description Description { get; set; }
         [JsonPropertyName("priority")]
         public Priority Priority { get; set; }
         [JsonPropertyName("duedate")]
@@ -184,25 +245,6 @@ namespace JiraRestClient.Net.Domain.Issue
         public string StatusColor { get; set; }
     }
     
-    public class Attachment
-    {
-        public string Self { get; set; }
-        public string Id { get; set; }
-        public string Filename { get; set; }
-        public User Author { get; set; }
-        public string Created { get; set; }
-        public int? Size { get; set; }
-        public string MimeType { get; set; }
-        public string Content { get; set; }
-        public string Thumbnail { get; set; }
-    }
-
-    public class Aggregateprogress
-    {
-        public int? Progress { get; set; }
-        public int? Total { get; set; }
-    }
-
     public class CommentList
     {
         public int? StartAt { get; set; }

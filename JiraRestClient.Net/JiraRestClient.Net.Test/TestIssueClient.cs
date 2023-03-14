@@ -40,7 +40,19 @@ namespace JiraRestClient.Net.Test
             {
                 Fields = new IssueFields
                 {
-                    Description = "This is an new Issue",
+                    Description = new Description
+                    {
+                        Version = 1,
+                        Type = "doc",
+                        Content = new List<Content>
+                        {
+                            new()
+                            {
+                                Type = "text",
+                                Text = "Lorem Ipsum"
+                            }
+                        }
+                    },
                     Summary = "Created via RestAPI",
                     Project = new Project
                     {

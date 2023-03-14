@@ -1,16 +1,6 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=33b29e7e_002D9464_002D4628_002D92b4_002Ddf74d68c6202/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestGetLoggedInUser" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=33a35c19_002D9431_002D4b31_002Dbee6_002Dc8704b538924/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestGetIssueByKey" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;MSTest::A305E2B0-796F-42F5-9BBD-FFEE7A8D7BCE::.NETCoreApp,Version=v3.1::JiraRestClient.Net.Test.TestUserClient.TestGetLoggedInUser&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::A305E2B0-796F-42F5-9BBD-FFEE7A8D7BCE::.NETCoreApp,Version=v3.1::JiraRestClient.Net.Test.TestUserClient.TestGetUserByUsername&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::A305E2B0-796F-42F5-9BBD-FFEE7A8D7BCE::.NETCoreApp,Version=v3.1::JiraRestClient.Net.Test.TestIssueClient.TestGetIssueByKey&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::A305E2B0-796F-42F5-9BBD-FFEE7A8D7BCE::.NETCoreApp,Version=v3.1::JiraRestClient.Net.Test.TestIssueClient.TestGetIssueByKeyWithFields&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::A305E2B0-796F-42F5-9BBD-FFEE7A8D7BCE::.NETCoreApp,Version=v3.1::JiraRestClient.Net.Test.TestSystemClient&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::A305E2B0-796F-42F5-9BBD-FFEE7A8D7BCE::.NETCoreApp,Version=v3.1::JiraRestClient.Net.Test.TestSearchClient.TestSearchIssues&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::A305E2B0-796F-42F5-9BBD-FFEE7A8D7BCE::.NETCoreApp,Version=v3.1::JiraRestClient.Net.Test.TestProjectClient.TestGetAllProjects&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::A305E2B0-796F-42F5-9BBD-FFEE7A8D7BCE::.NETCoreApp,Version=v3.1::JiraRestClient.Net.Test.TestPermissionsClient.TestGetMyPermissions&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::A305E2B0-796F-42F5-9BBD-FFEE7A8D7BCE::.NETCoreApp,Version=v3.1::JiraRestClient.Net.Test.TestIssueClient.TestCreateIssue&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::A305E2B0-796F-42F5-9BBD-FFEE7A8D7BCE::.NETCoreApp,Version=v3.1::JiraRestClient.Net.Test.TestProjectClient.TestProjectByKey&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::A305E2B0-796F-42F5-9BBD-FFEE7A8D7BCE::.NETCoreApp,Version=v3.1::JiraRestClient.Net.Test.TestIssueClient.TestAddAttachment&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::A305E2B0-796F-42F5-9BBD-FFEE7A8D7BCE::net6.0::JiraRestClient.Net.Test.TestIssueClient.TestGetIssueByKey&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
