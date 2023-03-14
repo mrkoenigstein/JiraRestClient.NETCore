@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Text.Json;
 using JiraRestClient.Net.Core.Extension;
-using JiraRestClient.Net.Domain;
 using JiraRestClient.Net.Domain.Issue;
 using JiraRestClient.Net.Util;
 

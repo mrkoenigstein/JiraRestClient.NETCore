@@ -40,8 +40,7 @@ public class JiraRestClient
     /// <param name="apiVersion"></param>
     public JiraRestClient(Uri uri, string username, string password, ApiVersion apiVersion = ApiVersion.V3)
     {
-        ServicePointManager.ServerCertificateValidationCallback +=
-            (sender, cert, chain, sslPolicyErrors) => true;
+        ServicePointManager.ServerCertificateValidationCallback += (_, _, _, _) => true;
         Client = new HttpClient();
         var versionPath = RestPathConstants.V3BaseRestPath;
         if (apiVersion == ApiVersion.V2)
@@ -58,8 +57,7 @@ public class JiraRestClient
 
     public JiraRestClient(Uri uri, string token)
     {
-        ServicePointManager.ServerCertificateValidationCallback +=
-            (sender, cert, chain, sslPolicyErrors) => true;
+        ServicePointManager.ServerCertificateValidationCallback += (_, _, _, _) => true;
         Client = new HttpClient();
         BaseUri = uri;
         Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", token);
@@ -67,8 +65,7 @@ public class JiraRestClient
 
     public JiraRestClient(Uri uri)
     {
-        ServicePointManager.ServerCertificateValidationCallback +=
-            (sender, cert, chain, sslPolicyErrors) => true;
+        ServicePointManager.ServerCertificateValidationCallback += (_, _, _, _) => true;
         Client = new HttpClient();
         BaseUri = uri;
     }

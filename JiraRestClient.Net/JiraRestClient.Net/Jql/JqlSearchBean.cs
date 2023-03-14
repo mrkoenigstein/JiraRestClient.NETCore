@@ -17,11 +17,11 @@ namespace JiraRestClient.Net.Jql
         /**
          * Result fields for a query.
          */
-        public readonly List<string> fields = new List<string>();
+        public readonly List<string> Fields = new();
 
         public string Jql { get; set; }
 
-        public readonly List<string> Expand = new List<string>();
+        public readonly List<string> Expand = new();
 
 
         public JqlSearchBean()
@@ -39,7 +39,7 @@ namespace JiraRestClient.Net.Jql
         {
             foreach (var element in efields)
             {
-                fields.Add(element.ToString());
+                Fields.Add(element.ToString());
             }
         }
 

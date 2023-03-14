@@ -54,7 +54,7 @@ namespace JiraRestClient.Net.Domain.Issue
     public class Attrs
     {
         [JsonPropertyName("url")]
-        public string url { get; set; }
+        public string Url { get; set; }
     }
     
     public class Content
@@ -174,7 +174,7 @@ namespace JiraRestClient.Net.Domain.Issue
         [JsonPropertyName("self")]
         public string Self { get; set; }
         [JsonPropertyName("votes")]
-        public int? votes { get; set; }
+        public int? Vote { get; set; }
         [JsonPropertyName("hasvoted")]
         public bool HasVoted { get; set; }
     }
@@ -182,7 +182,7 @@ namespace JiraRestClient.Net.Domain.Issue
     public class Progress
     {
         [JsonPropertyName("progress")]
-        public int? progress { get; set; }
+        public int? ProgressValue { get; set; }
         [JsonPropertyName("total")]
         public int? Total { get; set; }
     }
