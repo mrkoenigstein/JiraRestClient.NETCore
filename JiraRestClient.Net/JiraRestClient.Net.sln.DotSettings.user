@@ -1,9 +1,4 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=da690d05_002Dfcde_002D42c7_002D82cf_002Deb860b83b25b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestGetIssueByKeyWithFields" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;MSTest::A305E2B0-796F-42F5-9BBD-FFEE7A8D7BCE::net6.0::JiraRestClient.Net.Test.TestIssueClient.TestGetIssueByKeyWithFields&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;MSTest::A305E2B0-796F-42F5-9BBD-FFEE7A8D7BCE::net6.0::JiraRestClient.Net.Test.TestIssueClient.TestGetIssueByKey&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
+	
 	
 	<s:String x:Key="/Default/Housekeeping/UnitTestingMru/UnitTestRunner/RunConfigurationFilename/@EntryValue">D:\github\JiraRestClient.NETCore\JiraRestClient.Net\JiraRestClient.Net.Test\Resources\test.runsettings</s:String></wpf:ResourceDictionary>

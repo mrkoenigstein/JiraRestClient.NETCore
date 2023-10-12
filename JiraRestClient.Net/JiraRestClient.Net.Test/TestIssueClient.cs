@@ -17,11 +17,11 @@ namespace JiraRestClient.Net.Test
             var issue = RestClient.IssueClient.GetIssueByKey(IssueKeyToSearch);
             issue.Should().NotBeNull();
         }
-        
+
         [TestMethod]
         public void TestGetIssueByKeyWithFields()
         {
-            var fields = new List<string> {EField.Summary.Field, EField.Description.Field};
+            var fields = new List<string> { EField.Summary.Field, EField.Description.Field };
             var expands = new List<string>
             {
                 EField.Renderedfields.Field, EField.Transitions.Field, EField.Changelog.Field
@@ -48,8 +48,15 @@ namespace JiraRestClient.Net.Test
                         {
                             new()
                             {
-                                Type = "text",
-                                Text = "Lorem Ipsum"
+                                Type = "paragraph",
+                                Contents = new List<Content>
+                                {
+                                    new ()
+                                    {
+                                        Type = "text",
+                                        Text = "Lorem ipsum"
+                                    }
+                                }
                             }
                         }
                     },
@@ -60,11 +67,8 @@ namespace JiraRestClient.Net.Test
                     },
                     Issuetype = new IssueType
                     {
-                        Id = "10009"
-                    },
-                    Priority = new Priority
-                    {
-                        Id = "2"
+                        Id = "10009",
+                        Name = "Story"
                     }
                 }
             };
@@ -79,7 +83,7 @@ namespace JiraRestClient.Net.Test
         {
             var png = File.OpenRead("./Resources/frogs.png");
             var pdf = File.OpenRead("./Resources/test.pdf");
-            
+
             var streams = new List<FileStream>
             {
                 png, pdf

@@ -4,17 +4,20 @@ namespace JiraRestClient.Net.Test;
 
 public abstract class BaseTest
 {
-    protected readonly Uri Uri = new("https://sma.atlassian.net");
+    protected readonly Uri Uri = new("");
 
-    protected const string AccountId = "5ccaa3a43252b611c8ec161a";
+    /// <summary>
+    /// To get a User from the RestApi
+    /// </summary>
+    protected const string AccountId = "";
 
-    protected const string Username = "christian.schulze@sma.de";
+    protected const string Username = "";
 
-    protected const string Password = "ATATT3xFfGF0qVQ9EOgJLEyyh2ip9sTbeYlZwXTVlbLO9KT0u0JvZNQ6nBAhfs-HGC2eaKB7EKg8mLP7FR129mP41qBNF42A_ivRYtpVXjp3Hc95tP6yhq_7XWNVLmoCHoAzsqkWLnq3OooN0ClSyjl7MPw4kEaHU5gOXXkYRZKm1ZtUcxyzQXI=05F7C8F6";
+    protected const string Password = "";
 
-    protected const string ProjectKey = "UITEST";
+    protected const string ProjectKey = "KAN";
 
-    protected const string IssueKeyToSearch = "UITEST-1420";
+    protected const string IssueKeyToSearch = "KAN-1";
 
     protected readonly JiraRestClient RestClient;
     

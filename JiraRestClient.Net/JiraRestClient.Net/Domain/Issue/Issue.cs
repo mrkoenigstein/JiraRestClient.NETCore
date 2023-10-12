@@ -55,6 +55,9 @@ namespace JiraRestClient.Net.Domain.Issue
     {
         [JsonPropertyName("url")]
         public string Url { get; set; }
+        
+        [JsonPropertyName("level")]
+        public int Level { get; set; }
     }
     
     public class Content
