@@ -1,0 +1,354 @@
+{
+  "expand": "renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations,customfield_10621.cmdb.label,customfield_10621.cmdb.objectKey,customfield_10621.cmdb.attributes,customfield_10052.properties,customfield_10053.properties,customfield_10010.requestTypePractice",
+  "id": "333004",
+  "self": "https://sma.atlassian.net/rest/api/3/issue/333004",
+  "key": "UITEST-1388",
+  "fields": {
+    "parent": {
+      "id": "116409",
+      "key": "IGUPROG-782",
+      "self": "https://sma.atlassian.net/rest/api/3/issue/116409",
+      "fields": {
+        "summary": "Weiterentwicklung der E2E-Info-Webapp unter e2e.sma.de",
+        "status": {
+          "self": "https://sma.atlassian.net/rest/api/3/status/10180",
+          "description": "(Migrated on 24 Feb 2023 16:56 UTC)",
+          "iconUrl": "https://sma.atlassian.net/images/icons/statuses/generic.png",
+          "name": "Funnel",
+          "id": "10180",
+          "statusCategory": {
+            "self": "https://sma.atlassian.net/rest/api/3/statuscategory/2",
+            "id": 2,
+            "key": "new",
+            "colorName": "blue-gray",
+            "name": "To Do"
+          }
+        },
+        "priority": {
+          "self": "https://sma.atlassian.net/rest/api/3/priority/3",
+          "iconUrl": "https://sma.atlassian.net/images/icons/priorities/medium.svg",
+          "name": "Medium",
+          "id": "3"
+        },
+        "issuetype": {
+          "self": "https://sma.atlassian.net/rest/api/3/issuetype/10000",
+          "id": "10000",
+          "description": "A big user story that needs to be broken down. Created by Jira Software - do not edit or delete.",
+          "iconUrl": "https://sma.atlassian.net/images/icons/issuetypes/epic.svg",
+          "name": "Epic",
+          "subtask": false,
+          "hierarchyLevel": 1
+        }
+      }
+    },
+    "resolution": {
+      "self": "https://sma.atlassian.net/rest/api/3/resolution/10000",
+      "id": "10000",
+      "description": "Work has been completed on this issue.",
+      "name": "Done"
+    },
+   
+    "lastViewed": "2023-03-13T13:20:17.633+0100",
+    "aggregatetimeoriginalestimate": null,
+    "issuelinks": [],
+    "assignee": {
+      "self": "https://sma.atlassian.net/rest/api/3/user?accountId=5ccaa3a43252b611c8ec161a",
+      "accountId": "5ccaa3a43252b611c8ec161a",
+      "emailAddress": "christian.schulze@sma.de",
+      "avatarUrls": {
+        "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5ccaa3a43252b611c8ec161a/a91d4ab2-3208-44ae-a8c6-995c9fe978ad/48",
+        "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5ccaa3a43252b611c8ec161a/a91d4ab2-3208-44ae-a8c6-995c9fe978ad/24",
+        "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5ccaa3a43252b611c8ec161a/a91d4ab2-3208-44ae-a8c6-995c9fe978ad/16",
+        "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5ccaa3a43252b611c8ec161a/a91d4ab2-3208-44ae-a8c6-995c9fe978ad/32"
+      },
+      "displayName": "Christian Schulze",
+      "active": true,
+      "timeZone": "Europe/Berlin",
+      "accountType": "atlassian"
+    },
+    "subtasks": [],
+    "worklog": {
+      "startAt": 0,
+      "maxResults": 20,
+      "total": 0,
+      "worklogs": []
+    },
+    "issuetype": {
+      "self": "https://sma.atlassian.net/rest/api/3/issuetype/10009",
+      "id": "10009",
+      "description": "Stories track functionality or features expressed as user goals.",
+      "iconUrl": "https://sma.atlassian.net/images/icons/issuetypes/story.svg",
+      "name": "Story",
+      "subtask": false,
+      "hierarchyLevel": 0
+    },
+    "timetracking": {},
+    "duedate": null,
+    "timeestimate": null,
+    "status": {
+      "self": "https://sma.atlassian.net/rest/api/3/status/6",
+      "description": "The issue is considered finished, the resolution is correct. Issues which are closed can be reopened.",
+      "iconUrl": "https://sma.atlassian.net/images/icons/statuses/closed.png",
+      "name": "Closed",
+      "id": "6",
+      "statusCategory": {
+        "self": "https://sma.atlassian.net/rest/api/3/statuscategory/3",
+        "id": 3,
+        "key": "done",
+        "colorName": "green",
+        "name": "Done"
+      }
+    },
+    "aggregatetimeestimate": null,
+    "creator": {
+      "self": "https://sma.atlassian.net/rest/api/3/user?accountId=5c88dfc843de836baaa6eeb9",
+      "accountId": "5c88dfc843de836baaa6eeb9",
+      "emailAddress": "melissa.weber@sma.de",
+      "avatarUrls": {
+        "48x48": "https://secure.gravatar.com/avatar/adfad45fe118030d8ac4e2b5c25179f2?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMW-4.png",
+        "24x24": "https://secure.gravatar.com/avatar/adfad45fe118030d8ac4e2b5c25179f2?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMW-4.png",
+        "16x16": "https://secure.gravatar.com/avatar/adfad45fe118030d8ac4e2b5c25179f2?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMW-4.png",
+        "32x32": "https://secure.gravatar.com/avatar/adfad45fe118030d8ac4e2b5c25179f2?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMW-4.png"
+      },
+      "displayName": "Melissa Weber",
+      "active": true,
+      "timeZone": "Europe/Berlin",
+      "accountType": "atlassian"
+    },
+    "timespent": null,
+    "aggregatetimespent": null,
+   
+    "workratio": -1,
+    "labels": [],
+    "components": [
+      {
+        "self": "https://sma.atlassian.net/rest/api/3/component/14449",
+        "id": "14449",
+        "name": "WebApp",
+        "description": "WebApp zur Auswertung der Iguana-Ui-Tests"
+      }
+    ],
+    "reporter": {
+      "self": "https://sma.atlassian.net/rest/api/3/user?accountId=5c88dfc843de836baaa6eeb9",
+      "accountId": "5c88dfc843de836baaa6eeb9",
+      "emailAddress": "melissa.weber@sma.de",
+      "avatarUrls": {
+        "48x48": "https://secure.gravatar.com/avatar/adfad45fe118030d8ac4e2b5c25179f2?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMW-4.png",
+        "24x24": "https://secure.gravatar.com/avatar/adfad45fe118030d8ac4e2b5c25179f2?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMW-4.png",
+        "16x16": "https://secure.gravatar.com/avatar/adfad45fe118030d8ac4e2b5c25179f2?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMW-4.png",
+        "32x32": "https://secure.gravatar.com/avatar/adfad45fe118030d8ac4e2b5c25179f2?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMW-4.png"
+      },
+      "displayName": "Melissa Weber",
+      "active": true,
+      "timeZone": "Europe/Berlin",
+      "accountType": "atlassian"
+    },
+    "progress": {
+      "progress": 0,
+      "total": 0
+    },
+    "project": {
+      "self": "https://sma.atlassian.net/rest/api/3/project/10357",
+      "id": "10357",
+      "key": "UITEST",
+      "name": "Iguana-UI-Test",
+      "projectTypeKey": "software",
+      "simplified": false,
+      "avatarUrls": {
+        "48x48": "https://sma.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10400",
+        "24x24": "https://sma.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10400?size=small",
+        "16x16": "https://sma.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10400?size=xsmall",
+        "32x32": "https://sma.atlassian.net/rest/api/3/universal_avatar/view/type/project/avatar/10400?size=medium"
+      },
+      "projectCategory": {
+        "self": "https://sma.atlassian.net/rest/api/3/projectCategory/10008",
+        "id": "10008",
+        "description": "Projects in Technology with standard configuration",
+        "name": "Technology PEP Development"
+      }
+    },
+    "resolutiondate": "2023-03-13T13:20:17.775+0100",
+    "watches": {
+      "self": "https://sma.atlassian.net/rest/api/3/issue/UITEST-1388/watchers",
+      "watchCount": 0,
+      "isWatching": false
+    },
+    "updated": "2023-03-13T13:20:17.804+0100",
+    "timeoriginalestimate": null,
+    "description": {
+      "version": 1,
+      "type": "doc",
+      "content": [
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Mit Einführung der Jira-Cloud müssen in der WebApp die URLs angepasst werden, sodass weiterhin neue Tickets erstellt werden, bei einer Report Anfrage."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Info aus der AskMe-Session der JiraCloud: Es reicht nicht einfach die URL auszutauschen, da man Tokens verwenden muss. Weitere Infos sind hier "
+            },
+            {
+              "type": "inlineCard",
+              "attrs": {
+                "url": "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/#version"
+              }
+            },
+            {
+              "type": "text",
+              "text": " zu finden oder wir müssen ein Service-Ticket erstellen, um Hilfe anzufordern."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": [
+            {
+              "type": "text",
+              "text": "Anbei sind die Codestellen, die angepasst werden müssen."
+            }
+          ]
+        }
+      ]
+    },
+    "summary": "URL für die neue Jira-Cloud anpassen",
+    "comment": {
+      "comments": [
+        {
+          "self": "https://sma.atlassian.net/rest/api/3/issue/333004/comment/1209708",
+          "id": "1209708",
+          "author": {
+            "self": "https://sma.atlassian.net/rest/api/3/user?accountId=5ccaa3a43252b611c8ec161a",
+            "accountId": "5ccaa3a43252b611c8ec161a",
+            "emailAddress": "christian.schulze@sma.de",
+            "avatarUrls": {
+              "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5ccaa3a43252b611c8ec161a/a91d4ab2-3208-44ae-a8c6-995c9fe978ad/48",
+              "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5ccaa3a43252b611c8ec161a/a91d4ab2-3208-44ae-a8c6-995c9fe978ad/24",
+              "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5ccaa3a43252b611c8ec161a/a91d4ab2-3208-44ae-a8c6-995c9fe978ad/16",
+              "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5ccaa3a43252b611c8ec161a/a91d4ab2-3208-44ae-a8c6-995c9fe978ad/32"
+            },
+            "displayName": "Christian Schulze",
+            "active": true,
+            "timeZone": "Europe/Berlin",
+            "accountType": "atlassian"
+          },
+          "body": {
+            "version": 1,
+            "type": "doc",
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "In der Jira Cloud Rest Api ist BasicAuth nicht mehr verfügbar. Wir können lediglich pro User einen ApiToken nutzen welcher jedoch von jedem selbst generiert werden muss. "
+                  },
+                  {
+                    "type": "hardBreak"
+                  },
+                  {
+                    "type": "text",
+                    "text": "Diese Api Tokens will ich aber auch auf keinen Fall in unserer Datenbank speichern. Von daher wird wohl die Jira Verbindung sterben. "
+                  }
+                ]
+              }
+            ]
+          },
+          "updateAuthor": {
+            "self": "https://sma.atlassian.net/rest/api/3/user?accountId=5ccaa3a43252b611c8ec161a",
+            "accountId": "5ccaa3a43252b611c8ec161a",
+            "emailAddress": "christian.schulze@sma.de",
+            "avatarUrls": {
+              "48x48": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5ccaa3a43252b611c8ec161a/a91d4ab2-3208-44ae-a8c6-995c9fe978ad/48",
+              "24x24": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5ccaa3a43252b611c8ec161a/a91d4ab2-3208-44ae-a8c6-995c9fe978ad/24",
+              "16x16": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5ccaa3a43252b611c8ec161a/a91d4ab2-3208-44ae-a8c6-995c9fe978ad/16",
+              "32x32": "https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/5ccaa3a43252b611c8ec161a/a91d4ab2-3208-44ae-a8c6-995c9fe978ad/32"
+            },
+            "displayName": "Christian Schulze",
+            "active": true,
+            "timeZone": "Europe/Berlin",
+            "accountType": "atlassian"
+          },
+          "created": "2023-03-07T07:46:22.162+0100",
+          "updated": "2023-03-07T07:46:22.162+0100",
+          "jsdPublic": true
+        }
+      ],
+      "self": "https://sma.atlassian.net/rest/api/3/issue/333004/comment",
+      "maxResults": 1,
+      "total": 1,
+      "startAt": 0
+    },
+    "statuscategorychangedate": "2023-03-13T13:20:17.805+0100",
+    "fixVersions": [
+      {
+        "self": "https://sma.atlassian.net/rest/api/3/version/17912",
+        "id": "17912",
+        "name": "Lankoon 1.5.1",
+        "archived": false,
+        "released": false
+      }
+    ],
+    "customfield_10904": null,
+    "priority": {
+      "self": "https://sma.atlassian.net/rest/api/3/priority/1",
+      "iconUrl": "https://sma.atlassian.net/images/icons/priorities/highest.svg",
+      "name": "Highest",
+      "id": "1"
+    },
+    "versions": [
+      {
+        "self": "https://sma.atlassian.net/rest/api/3/version/17908",
+        "id": "17908",
+        "name": "Lankoon 1.5",
+        "archived": false,
+        "released": true,
+        "releaseDate": "2022-01-19"
+      }
+    ],
+    "aggregateprogress": {
+      "progress": 0,
+      "total": 0
+    },
+    "issuerestriction": {
+      "issuerestrictions": {},
+      "shouldDisplay": false
+    },
+    "created": "2023-02-28T11:56:36.725+0100",
+    "security": null,
+    "attachment": [
+      {
+        "self": "https://sma.atlassian.net/rest/api/3/attachment/511224",
+        "id": "511224",
+        "filename": "jira-url.png",
+        "author": {
+          "self": "https://sma.atlassian.net/rest/api/3/user?accountId=5c88dfc843de836baaa6eeb9",
+          "accountId": "5c88dfc843de836baaa6eeb9",
+          "emailAddress": "melissa.weber@sma.de",
+          "avatarUrls": {
+            "48x48": "https://secure.gravatar.com/avatar/adfad45fe118030d8ac4e2b5c25179f2?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMW-4.png",
+            "24x24": "https://secure.gravatar.com/avatar/adfad45fe118030d8ac4e2b5c25179f2?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMW-4.png",
+            "16x16": "https://secure.gravatar.com/avatar/adfad45fe118030d8ac4e2b5c25179f2?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMW-4.png",
+            "32x32": "https://secure.gravatar.com/avatar/adfad45fe118030d8ac4e2b5c25179f2?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FMW-4.png"
+          },
+          "displayName": "Melissa Weber",
+          "active": true,
+          "timeZone": "Europe/Berlin",
+          "accountType": "atlassian"
+        },
+        "created": "2023-02-28T12:29:49.734+0100",
+        "size": 45777,
+        "mimeType": "image/png",
+        "content": "https://sma.atlassian.net/rest/api/3/attachment/content/511224",
+        "thumbnail": "https://sma.atlassian.net/rest/api/3/attachment/thumbnail/511224"
+      }
+    ]
+  }
+}

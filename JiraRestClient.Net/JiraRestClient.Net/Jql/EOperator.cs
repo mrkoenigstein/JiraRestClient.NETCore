@@ -185,7 +185,7 @@
         /*
          * The operator.
          */
-        public string eoperator { get; set; }
+        public string Eoperator { get; set; }
 
         /*
          * Instantiates a new operator.
@@ -194,13 +194,13 @@
          */
         public EOperator(string eoperator)
         {
-            this.eoperator = eoperator;
+            Eoperator = eoperator;
         }
 
 
         public override string ToString()
         {
-            return eoperator;
+            return Eoperator;
         }
 
     }

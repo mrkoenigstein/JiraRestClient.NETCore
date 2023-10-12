@@ -6,6 +6,8 @@
 
         // REST Paths
         public const string BaseRestPath = "rest/api/2";
+        
+        public const string V3BaseRestPath = "rest/api/3";
 
         public const string Project = "project";
 
@@ -38,5 +40,9 @@
         public const string ServerInfo = "serverInfo";
 
         public const string MyPermissions = "mypermissions";
+
+        public const string Bulk = "bulk";
+        
+        public const string Migration = "migration";
     }
 }

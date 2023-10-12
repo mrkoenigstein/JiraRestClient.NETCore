@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+    <TestRunParameters>
+        <Parameter name="BaseUrl" value=""/>
+        <Parameter name="AccountId" value=""/>
+        <Parameter name="Username" value=""/>
+        <Parameter name="Password" value=""/>
+        <Parameter name="ProjectKey" value=""/>
+        <Parameter name="IssueKeyToSearch" value=""/>
+    </TestRunParameters>
+</RunSettings>

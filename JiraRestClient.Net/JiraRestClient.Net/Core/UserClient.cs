@@ -1,37 +1,32 @@
-using System.Net;
+using System.Collections.Generic;
 using System.Text.Json;
+using JiraRestClient.Net.Core.Extension;
 using JiraRestClient.Net.Domain;
 using JiraRestClient.Net.Util;
 
-namespace JiraRestClient.Net.Core
+namespace JiraRestClient.Net.Core;
+
+public class UserClient : BaseClient
 {
-    public class UserClient : BaseClient
+    public UserClient(JiraRestClient jiraRestClient) : base(jiraRestClient)
     {
-        public UserClient(JiraRestClient jiraRestClient) : base(jiraRestClient)
-        {
-        }
+    }
+        
+    public User GetUserByUsername(string accountId)
+    {
+        var uri = BaseUri.AddPaths(RestPathConstants.User);
+        uri = uri.AddQuery($"accountId={accountId}");
+        var stream = Client.GetStringAsync(uri);
+        var result = stream.Result;
+        return JsonSerializer.Deserialize<User>(result);
+    }
 
-        public User GetLoggedInUser()
-        {        
-            var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.User);
-            restUriBuilder.Query = "username=" + Username;
-            var completeUri = restUriBuilder.ToString();
-            var task = Client.GetAsync(completeUri);
-            var httpResponseMessage = task.Result;
-            if (httpResponseMessage.StatusCode != HttpStatusCode.OK)
-            {
-                return null;
-            }
-            var streamResult = httpResponseMessage.Content.ReadAsStringAsync();
-            return  JsonSerializer.Deserialize<User>(streamResult.Result);
-        }
-
-        public User GetUserByUsername(string username){
-             var restUriBuilder = UriHelper.BuildPath(BaseUri, RestPathConstants.User);
-            restUriBuilder.Query = "username=" + username;
-            var completeUri = restUriBuilder.ToString();
-            var stream = Client.GetStringAsync(completeUri);
-            return  JsonSerializer.Deserialize<User>(stream.Result);
-        }
+    public IEnumerable<UserMigration> GetAccountIds(List<string> username)
+    {
+        var uri = BaseUri.AddPaths(RestPathConstants.User, RestPathConstants.Bulk, RestPathConstants.Migration);
+        uri = uri.AddQuery($"username={username}");
+        var stream = Client.GetStringAsync(uri);
+        var streamResult = stream.Result;
+        return JsonSerializer.Deserialize<List<UserMigration>>(streamResult);
     }
 }

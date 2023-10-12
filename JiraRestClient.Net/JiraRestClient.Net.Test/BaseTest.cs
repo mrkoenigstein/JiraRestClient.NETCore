@@ -1,23 +1,30 @@
 using System;
 
-namespace JiraRestClient.Net.Test
+namespace JiraRestClient.Net.Test;
+
+public abstract class BaseTest
 {
-    public abstract class BaseTest
-    {
-        protected readonly Uri Uri = new Uri("http://localhost:8080");
+    protected readonly Uri Uri = new("");
 
-        protected const string Username = "admin";
+    /// <summary>
+    /// To get a User from the RestApi
+    /// </summary>
+    protected const string AccountId = "";
 
-        protected const string Password = "admin";
+    protected const string Username = "";
 
-        protected const string ProjectKey = "DEMO";
+    protected const string Password = "";
 
-        protected const string IssuekeyToSearch = "DEMO-25";
+    protected const string ProjectKey = "KAN";
 
-        protected readonly JiraRestClient RestClient;
+    protected const string IssueKeyToSearch = "KAN-1";
 
-        public BaseTest(){
-            RestClient =  new JiraRestClient(Uri, Username, Password);
-        }
+    protected readonly JiraRestClient RestClient;
+    
+    protected Uri BaseUri;
+
+    public BaseTest(){
+        RestClient =  new JiraRestClient(Uri, Username, Password);
+        BaseUri = RestClient.BaseUri;
     }
 }

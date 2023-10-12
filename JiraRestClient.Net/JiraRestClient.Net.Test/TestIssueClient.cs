@@ -14,19 +14,19 @@ namespace JiraRestClient.Net.Test
         [TestMethod]
         public void TestGetIssueByKey()
         {
-            var issue = RestClient.IssueClient.GetIssueByKey(IssuekeyToSearch);
+            var issue = RestClient.IssueClient.GetIssueByKey(IssueKeyToSearch);
             issue.Should().NotBeNull();
         }
-        
+
         [TestMethod]
         public void TestGetIssueByKeyWithFields()
         {
-            var fields = new List<string> {EField.Summary.Field, EField.Description.Field};
+            var fields = new List<string> { EField.Summary.Field, EField.Description.Field };
             var expands = new List<string>
             {
                 EField.Renderedfields.Field, EField.Transitions.Field, EField.Changelog.Field
             };
-            var issue = RestClient.IssueClient.GetIssueByKey(IssuekeyToSearch, fields, expands);
+            var issue = RestClient.IssueClient.GetIssueByKey(IssueKeyToSearch, fields, expands);
             issue.Should().NotBeNull();
             issue.Fields.Summary.Should().NotBeNull();
             issue.Fields.Description.Should().NotBeNull();
@@ -40,19 +40,35 @@ namespace JiraRestClient.Net.Test
             {
                 Fields = new IssueFields
                 {
-                    Description = "This is an new Issue",
+                    Description = new Description
+                    {
+                        Version = 1,
+                        Type = "doc",
+                        Content = new List<Content>
+                        {
+                            new()
+                            {
+                                Type = "paragraph",
+                                Contents = new List<Content>
+                                {
+                                    new ()
+                                    {
+                                        Type = "text",
+                                        Text = "Lorem ipsum"
+                                    }
+                                }
+                            }
+                        }
+                    },
                     Summary = "Created via RestAPI",
                     Project = new Project
                     {
-                        Id = "10000"
+                        Key = ProjectKey
                     },
                     Issuetype = new IssueType
                     {
-                        Id = "10001"
-                    },
-                    Priority = new Priority
-                    {
-                        Id = "3"
+                        Id = "10009",
+                        Name = "Story"
                     }
                 }
             };
@@ -67,7 +83,7 @@ namespace JiraRestClient.Net.Test
         {
             var png = File.OpenRead("./Resources/frogs.png");
             var pdf = File.OpenRead("./Resources/test.pdf");
-            
+
             var streams = new List<FileStream>
             {
                 png, pdf

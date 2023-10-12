@@ -41,4 +41,12 @@ namespace JiraRestClient.Net.Domain
     {
 
     }
+
+    public class UserMigration
+    {
+        [JsonPropertyName("username")]
+        public string Username { get; set; }
+        [JsonPropertyName("accountId")]
+        public string AccountId { get; set; }
+    }
 }
